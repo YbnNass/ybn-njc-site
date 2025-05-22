@@ -1,121 +1,135 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>YBN : New Jack City</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <style>
-    /* Intégration du CSS ci-dessous */
+    /* Reset basique */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background: linear-gradient(180deg, #000000 0%, #121212 100%);
+      color: #FFD700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+
+    header img {
+      width: 140px;
+      height: auto;
+      filter: drop-shadow(0 0 8px #FFC107);
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      color: #FFC107;
+      text-shadow: 0 0 12px #FFC107;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header h1 span {
+      font-size: 2.4rem;
+      animation: pulse 2.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0.6; transform: scale(1.1); }
+    }
+
+    .discord-button {
+      background: #FFC107;
+      color: #000;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 15px 45px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 0 20px #FFC107;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+    .discord-button:hover {
+      box-shadow: 0 0 30px #FFD633, 0 0 40px #FFD633;
+      transform: scale(1.05);
+      color: #000;
+    }
+
+    main {
+      max-width: 900px;
+      width: 100%;
+      background: #121212;
+      border: 2px solid #FFC107;
+      border-radius: 15px;
+      padding: 30px 40px;
+      box-shadow: 0 0 40px rgba(255, 193, 7, 0.4);
+      color: #FFD633;
+    }
+
+    main h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #FFC107;
+      text-align: center;
+    }
+
+    main p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+      header img {
+        width: 110px;
+      }
+      .discord-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+      }
+      main {
+        padding: 20px 20px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City">
-    <h1>YBN : New Jack City</h1>
-    <a href="https://discord.gg/tonliendiscord" class="discord-button">Rejoins notre Discord</a>
+    <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City" />
+    <h1>YBN : New Jack City <span>🗽</span></h1>
+    <a href="https://discord.gg/tonliendiscord" target="_blank" class="discord-button">Rejoins notre Discord</a>
   </header>
   <main>
-    <section class="presentation">
-      <h2>Présentation du serveur</h2>
-      <p>
-        YBN : New Jack City est un serveur RP immersif avec une mentalité US, conçu pour offrir une expérience de jeu réaliste et captivante. Notre communauté est soudée et passionnée, avec une économie équilibrée et des scénarios riches pour vous plonger dans l’univers du RP.
-      </p>
-    </section>
+    <h2>Présentation du serveur</h2>
+    <p>
+      YBN : New Jack City est un serveur RP immersif avec une mentalité US, conçu pour offrir une expérience de jeu réaliste et captivante.
+      Notre communauté est soudée et passionnée, avec une économie équilibrée et des scénarios riches pour vous plonger dans l’univers du RP.
+      Rejoignez-nous pour vivre des histoires uniques, des alliances stratégiques, et des rivalités intenses dans une ambiance professionnelle et respectueuse.
+    </p>
   </main>
 </body>
 </html>
-
-body {
-  margin: 0;
-  background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
-  color: #FFD700;
-  font-family: 'Press Start 2P', cursive;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header {
-  padding: 30px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  border-bottom: 2px solid #FFC107;
-  background-color: #000;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-header img {
-  height: 100px;
-  width: auto;
-  filter: drop-shadow(0 0 3px #FFC107);
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #FFC107;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.discord-button {
-  background-color: #B8860B;
-  color: #000;
-  border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.3rem;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #B8860B;
-  font-weight: 700;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.discord-button:hover {
-  background-color: #9b6f06;
-  color: #111;
-  box-shadow: 0 0 20px #9b6f06;
-}
-
-main {
-  flex-grow: 1;
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background: transparent;
-}
-
-section.presentation {
-  max-width: 900px;
-  background-color: #111;
-  border: 2px solid #FFC107;
-  border-radius: 12px;
-  padding: 40px 30px;
-  box-shadow: 0 0 30px rgba(255, 193, 7, 0.3);
-}
-
-section.presentation h2 {
-  margin-top: 0;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #FFC107;
-  margin-bottom: 25px;
-  letter-spacing: 1.2px;
-}
-
-section.presentation p {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #FFD700;
-  text-align: justify;
-}
