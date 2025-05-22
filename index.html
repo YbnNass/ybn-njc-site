@@ -9,20 +9,29 @@
     body {
       margin: 0;
       background-color: #000; /* noir */
-      color: #FFD700; /* jaune doré */
+      color: #FFD700; /* couleur générale jaune doré */
       font-family: 'Permanent Marker', cursive;
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
     }
 
-    h1 {
-      font-size: 4rem;
-      margin-bottom: 2rem;
+    header {
+      padding: 20px 40px;
+      color: #FFC107; /* jaune plus doux/orangé pour le titre */
+      font-size: 3.5rem;
       text-shadow: 2px 2px 4px #222;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .discord-button {
@@ -47,7 +56,11 @@
   </style>
 </head>
 <body>
-  <h1>YBN : New Jack City 🕊️</h1>
-  <a href="https://discord.gg/tonliendiscord" target="_blank" class="discord-button">Rejoins notre Discord</a>
+  <header>
+    <span>YBN : New Jack City</span> <span>🗽</span>
+  </header>
+  <main>
+    <a href="https://discord.gg/tonliendiscord" target="_blank" class="discord-button">Rejoins notre Discord</a>
+  </main>
 </body>
 </html>
