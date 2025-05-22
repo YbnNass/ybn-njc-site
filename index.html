@@ -40,6 +40,10 @@
     }
 
     header h1 .ybn {
+      color: #FFFFFF;
+    }
+
+    header h1 .njc {
       color: #FFD700;
     }
 
@@ -84,7 +88,12 @@
     }
 
     section {
+      display: none;
       margin-bottom: 60px;
+    }
+
+    section.active {
+      display: block;
     }
 
     section h2 {
@@ -133,11 +142,11 @@
     <div class="header-left">
       <div class="logo-title">
         <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City" />
-        <h1><span class="ybn">YBN</span> x NewJackCity 🗽</h1>
+        <h1><span class="ybn">YBN</span> x <span class="njc">NewJackCity</span> 🗽</h1>
       </div>
       <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#whitelist">Whitelist</a>
+        <a href="#accueil" onclick="showSection('accueil')">Accueil</a>
+        <a href="#whitelist" onclick="showSection('whitelist')">Whitelist</a>
         <a href="https://discord.gg/tonliendiscord" target="_blank">Discord</a>
       </nav>
     </div>
@@ -145,7 +154,7 @@
   </header>
 
   <main>
-    <section id="accueil">
+    <section id="accueil" class="active">
       <h2>Bienvenue à New Jack City</h2>
       <img src="https://i.ibb.co/hRV0h5GJ/9ca6921b-735f-4cf6-8651-55f34c9d4d63.png" alt="Présentation YBN" />
       <p>
@@ -154,13 +163,20 @@
     </section>
 
     <section id="whitelist">
-      <h2>🎯 Étape Whitelist</h2>
+      <h2>📝 Formulaire Whitelist</h2>
       <p>Remplis le QCM ci-dessous pour prouver que tu connais les règles, le RP et l’univers. Si tu valides, tu passeras en vocal avec le staff pour obtenir ton rôle sur Discord.</p>
       <iframe src="https://docs.google.com/forms/d/e/TON_ID_DE_FORMULAIRE/viewform?embedded=true">Chargement…</iframe>
     </section>
   </main>
 
   <script>
+    function showSection(id) {
+      document.querySelectorAll('main section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
     const loginBtn = document.getElementById('loginBtn');
 
     function getAccessTokenFromUrl() {
