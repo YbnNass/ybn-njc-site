@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YBN x New Jack City</title>
+  <title>YBN x NewJackCity</title>
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -11,82 +11,80 @@
       padding: 0;
       font-family: 'Urbanist', sans-serif;
       background-color: #0e0e0e;
-      color: #f5c518;
+      color: #5FAF9B;
     }
 
     header {
-      padding: 30px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: #111;
-      border-bottom: 2px solid #222;
+      padding: 20px 40px;
+      background-color: #0e0e0e;
     }
 
-    header .logo-title {
+    .logo-title {
       display: flex;
       align-items: center;
-      gap: 15px;
     }
 
     header img {
-      width: 130px;
+      width: 70px;
       height: auto;
+      margin-right: 15px;
     }
 
     header h1 {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       font-weight: 700;
       margin: 0;
-      color: #f5c518;
     }
 
-    /* YBN en vert */
     header h1 .ybn {
       color: #5FAF9B;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 20px;
     }
 
     nav a {
       color: #f5c518;
-      font-weight: 700;
-      font-size: 1.1rem;
       text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      background-color: #5FAF9B;
-      color: #0e0e0e;
+      color: #ffdd33;
     }
 
-    .discord-button {
-      background-color: #5FAF9B;
-      color: #0e0e0e;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 10px 22px;
-      border-radius: 25px;
+    .discord-login {
+      background-color: #7289DA;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
       text-decoration: none;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .discord-button:hover {
-      background-color: #4a907f;
-      transform: scale(1.05);
+      font-weight: bold;
+      font-size: 0.9rem;
+      position: absolute;
+      top: 20px;
+      right: 40px;
     }
 
     main {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
+      color: #5FAF9B;
     }
 
     main h2 {
@@ -99,71 +97,80 @@
     main p {
       font-size: 1.1rem;
       line-height: 1.7;
-      color: #f5c518;
     }
 
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.6rem;
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
       }
-      nav a,
-      .discord-button {
-        font-size: 0.9rem;
-        padding: 8px 15px;
+      nav {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        gap: 10px;
       }
-      header img {
-        width: 100px;
+      .discord-login {
+        position: static;
+        margin-top: 10px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo-title">
-      <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City" />
-      <h1><span class="ybn">YBN</span> x New Jack City 🗽</h1>
+    <div class="header-left">
+      <div class="logo-title">
+        <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City" />
+        <h1><span class="ybn">YBN</span> x NewJackCity 🗽</h1>
+      </div>
+      <nav>
+        <a href="#">Accueil</a>
+        <a href="#whitelist">Whitelist</a>
+        <a href="https://discord.gg/tonliendiscord" target="_blank">Discord</a>
+      </nav>
     </div>
-    <nav>
-      <a href="#accueil" id="accueil-link">Accueil</a>
-      <a href="#whitelist" id="whitelist-link">Whitelist</a>
-      <a href="https://discord.gg/tonliendiscord" target="_blank" class="discord-button">Discord</a>
-    </nav>
+    <a id="loginBtn" class="discord-login" href="#">Connexion</a>
   </header>
 
-  <main id="accueil">
+  <main>
     <h2>Présentation</h2>
     <p>
-      Bienvenue sur le site officiel de YBN x New Jack City. Serveur GTA RP basé sur une mentalité US et une immersion totale.  
-      Rejoins une communauté mature avec des systèmes propres, une économie réaliste et une ambiance authentique.
+      Bienvenue sur le site officiel de YBN : New Jack City. Serveur GTA RP inspiré de la street US, ambiance réaliste, personnages profonds et scènes sérieuses garanties.  
+      Rejoins une communauté mature, avec des systèmes propres, une économie réaliste et une immersion totale dans le monde du RP.
     </p>
-  </main>
-
-  <main id="whitelist" style="display:none;">
-    <h2>Whitelist</h2>
-    <p>
-      Pour rejoindre notre serveur, tu dois réussir notre QCM. Ce test est conçu pour vérifier ta mentalité RP et ta compréhension des règles.
-    </p>
-    <a href="https://forms.gle/tonformulaire" target="_blank" class="discord-button" style="margin-top: 20px;">Formulaire Whitelist</a>
   </main>
 
   <script>
-    // Simple switch d'onglets
-    const accueilLink = document.getElementById('accueil-link');
-    const whitelistLink = document.getElementById('whitelist-link');
-    const accueilSection = document.getElementById('accueil');
-    const whitelistSection = document.getElementById('whitelist');
+    const loginBtn = document.getElementById('loginBtn');
 
-    accueilLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      accueilSection.style.display = 'block';
-      whitelistSection.style.display = 'none';
-    });
+    function getAccessTokenFromUrl() {
+      const hash = window.location.hash;
+      if (!hash) return null;
+      const params = new URLSearchParams(hash.substring(1));
+      return params.get('access_token');
+    }
 
-    whitelistLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      accueilSection.style.display = 'none';
-      whitelistSection.style.display = 'block';
-    });
+    async function fetchUserInfo(token) {
+      const response = await fetch('https://discord.com/api/users/@me', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      return response.json();
+    }
+
+    async function handleLogin() {
+      const token = getAccessTokenFromUrl();
+      if (token) {
+        const user = await fetchUserInfo(token);
+        loginBtn.textContent = user.username;
+        loginBtn.href = "#";
+      } else {
+        loginBtn.href = "https://discord.com/oauth2/authorize?client_id=1375199865566531725&redirect_uri=https%3A%2F%2Fybnnass.github.io%2Fybn-njc-site%2F&response_type=token&scope=identify";
+      }
+    }
+
+    handleLogin();
   </script>
 </body>
 </html>
