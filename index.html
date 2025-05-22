@@ -1,95 +1,144 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YBN - New Jack City</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-    body {
-      margin: 0;
-      font-family: 'Oswald', sans-serif;
-      background: url('https://i.imgur.com/fG6yShH.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #f1f1f1;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>YBN - New Jack City</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  body {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    background: url('https://i.imgur.com/fG6yShH.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 3px solid #c62828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  header img {
+    height: 50px;
+    width: auto;
+  }
+  main {
+    flex: 1;
+    background-color: rgba(0,0,0,0.85);
+    margin: 30px auto;
+    max-width: 900px;
+    border-radius: 12px;
+    padding: 40px 50px;
+    box-shadow: 0 0 25px #c62828;
+    line-height: 1.7;
+  }
+  main h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #e53935;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  main p {
+    font-size: 1.3rem;
+    color: #ddd;
+    text-align: justify;
+  }
+  a.form-link {
+    display: block;
+    margin: 35px auto 0;
+    max-width: 420px;
+    padding: 18px 25px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #fff;
+    background: #c62828;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+  }
+  a.form-link:hover {
+    background: #b71c1c;
+  }
+  footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    color: #eee;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
     header {
-      background-color: rgba(0, 0, 0, 0.75);
-      padding: 20px 40px;
-      text-align: center;
-      font-size: 3rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-bottom: 3px solid #c62828;
+      font-size: 2rem;
+      padding: 15px 20px;
+      flex-direction: column;
+      gap: 10px;
     }
     main {
-      flex: 1;
-      background-color: rgba(0,0,0,0.7);
-      margin: 30px auto;
-      max-width: 900px;
-      border-radius: 10px;
-      padding: 30px 40px;
-      box-shadow: 0 0 20px #c62828;
+      padding: 25px 20px;
+      margin: 20px 10px;
     }
     main h2 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      color: #e53935;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
     }
     main p {
-      font-size: 1.25rem;
-      line-height: 1.6;
-      text-align: justify;
-      color: #ddd;
-    }
-    footer {
-      background-color: rgba(0, 0, 0, 0.85);
-      text-align: center;
-      padding: 15px;
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-      color: #bbb;
+      font-size: 1.1rem;
     }
     a.form-link {
-      display: block;
-      margin: 30px auto 0;
-      max-width: 400px;
+      font-size: 1.3rem;
       padding: 15px 20px;
-      text-align: center;
-      font-weight: 700;
-      font-size: 1.5rem;
-      text-decoration: none;
-      color: #fff;
-      background: #c62828;
-      border-radius: 8px;
-      transition: background 0.3s ease;
+      max-width: 90%;
     }
-    a.form-link:hover {
-      background: #b71c1c;
+    footer {
+      font-size: 1rem;
+      padding: 15px 10px;
     }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <header>YBN - New Jack City</header>
-  <main>
-    <h2>Wassup Bro</h2>
-    <p>
-      Bienvenue sur YBN x NJC, le QCM officiel pour passer ton vocal et rejoindre notre univers RP immersif à mentalité US.<br/><br/>
-      Ici, pas de place pour le fake ou le random. On veut du vrai, du solide, du lourd. Tu rentres dans un monde où chaque scène se joue avec respect, logique et flow de la street.<br/><br/>
-      Prépare-toi à montrer que t'as l'état d'esprit, la connaissance des règles, et le style qui font qu'on t'accueillera comme un vrai player.<br/><br/>
-      Clique sur le bouton ci-dessous pour accéder au formulaire whitelist, réponds bien, et on te voit en vocal pour la suite. Let's go, gang shit only.
-    </p>
-    <a class="form-link" href="TON_LIEN_GOOGLE_FORM" target="_blank" rel="noopener noreferrer">
-      Accéder au QCM Whitelist
-    </a>
-  </main>
-  <footer>© 2025 YBN x New Jack City — Mentalité US RP</footer>
+<header>
+  <img src="https://i.imgur.com/EsEj7wq.png" alt="YBN Logo" />
+  YBN - New Jack City
+</header>
+<main>
+  <h2>Wassup Bro, bienvenue sur YBN x NJC</h2>
+  <p>
+    Ici, c’est l’univers RP à mentalité US. Le vrai game, pas de place pour les touristes.  
+    Respect strict des règles, authenticité et immersion au cœur de notre city.  
+    Pour passer sur le vocal, tu dois d’abord remplir ce QCM.  
+    C’est la première étape pour prouver que t’es un vrai, que tu connais le code, le grind, la street.  
+    On est là pour construire une communauté solide, pas juste du chiffre.  
+    Sur mes potes morts, tu veux la place ?  
+    Alors fais tes preuves et montre que t’es clean, focus, et ready pour le gangshit.
+  </p>
+  <a
+    href="https://docs.google.com/forms/d/e/TON_LIEN_GOOGLE_FORM/viewform?usp=sf_link"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="form-link"
+  >Remplir le QCM Whitelist</a>
+</main>
+<footer>
+  © 2025 YBN x New Jack City — Mentalité US, RP authentique, respect et grind. Sur mes potes morts.
+</footer>
 </body>
 </html>
