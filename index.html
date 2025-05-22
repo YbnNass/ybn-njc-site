@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YBN : New Jack City</title>
+  <title>YBN x New Jack City</title>
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -15,216 +15,155 @@
     }
 
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #0e0e0e;
+      padding: 30px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 20px;
-      box-sizing: border-box;
-      border-bottom: 1px solid #333;
-      z-index: 1000;
+      background-color: #111;
+      border-bottom: 2px solid #222;
     }
 
-    .left-header {
+    header .logo-title {
       display: flex;
       align-items: center;
       gap: 15px;
     }
 
     header img {
-      width: 60px;
+      width: 130px;
       height: auto;
-      cursor: pointer;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 0;
+      color: #f5c518;
+    }
+
+    /* YBN en vert */
+    header h1 .ybn {
+      color: #5FAF9B;
     }
 
     nav {
       display: flex;
+      align-items: center;
       gap: 25px;
     }
 
     nav a {
-      color: #5FAF9B;
+      color: #f5c518;
       font-weight: 700;
-      text-decoration: none;
       font-size: 1.1rem;
-      padding: 8px 10px;
-      border-radius: 5px;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 8px;
       transition: background-color 0.3s ease;
-      cursor: pointer;
     }
 
-    nav a.active, nav a:hover {
+    nav a:hover {
       background-color: #5FAF9B;
       color: #0e0e0e;
     }
 
     .discord-button {
-      background-color: #f5c518;
-      color: #000;
+      background-color: #5FAF9B;
+      color: #0e0e0e;
       font-weight: 700;
       font-size: 1rem;
-      padding: 8px 20px;
-      border-radius: 30px;
+      padding: 10px 22px;
+      border-radius: 25px;
       text-decoration: none;
-      transition: background 0.3s ease, transform 0.2s ease;
-      white-space: nowrap;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .discord-button:hover {
-      background-color: #ffdd33;
+      background-color: #4a907f;
       transform: scale(1.05);
     }
 
     main {
       max-width: 900px;
-      margin: 110px auto 40px;
+      margin: 40px auto;
       padding: 0 20px;
     }
 
-    section {
-      display: none;
-      color: #5FAF9B;
-    }
-
-    section.active {
-      display: block;
-    }
-
-    h1, h2 {
-      color: #5FAF9B;
-      font-weight: 700;
-    }
-
-    h1 {
-      font-size: 2.8rem;
+    main h2 {
+      font-size: 2rem;
       margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 2.4rem;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      max-width: 700px;
-      margin-bottom: 25px;
-    }
-
-    .form-button {
-      background-color: #f5c518;
-      color: #000;
       font-weight: 700;
-      font-size: 1.1rem;
-      padding: 12px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: background 0.3s ease, transform 0.2s ease;
-      display: inline-block;
-      cursor: pointer;
+      color: #5FAF9B;
     }
 
-    .form-button:hover {
-      background-color: #ffdd33;
-      transform: scale(1.05);
+    main p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #f5c518;
     }
 
     @media (max-width: 480px) {
-      nav {
-        gap: 15px;
+      header h1 {
+        font-size: 1.6rem;
       }
-
-      nav a {
-        font-size: 1rem;
-        padding: 6px 8px;
-      }
-
+      nav a,
       .discord-button {
         font-size: 0.9rem;
-        padding: 6px 15px;
+        padding: 8px 15px;
       }
-
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      h2 {
-        font-size: 1.6rem;
+      header img {
+        width: 100px;
       }
     }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="left-header">
-    <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City" id="logo" />
+  <header>
+    <div class="logo-title">
+      <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City" />
+      <h1><span class="ybn">YBN</span> x New Jack City 🗽</h1>
+    </div>
     <nav>
-      <a href="#" class="active" data-section="accueil">Accueil</a>
-      <a href="#" data-section="whitelist">Whitelist</a>
+      <a href="#accueil" id="accueil-link">Accueil</a>
+      <a href="#whitelist" id="whitelist-link">Whitelist</a>
+      <a href="https://discord.gg/tonliendiscord" target="_blank" class="discord-button">Discord</a>
     </nav>
-  </div>
-  <a href="https://discord.gg/tonliendiscord" target="_blank" class="discord-button">Rejoins notre Discord</a>
-</header>
+  </header>
 
-<main>
-  <section id="accueil" class="active">
-    <h1><span style="color: #5FAF9B;">YBN</span> x New Jack City 🗽</h1>
+  <main id="accueil">
+    <h2>Présentation</h2>
     <p>
-      Bienvenue sur le site officiel de YBN : New Jack City. Serveur GTA RP inspiré de la street US, ambiance réaliste, personnages profonds et scènes sérieuses garanties.  
-      Rejoins une communauté mature, avec des systèmes propres, une économie réaliste et une immersion totale dans le monde du RP.
+      Bienvenue sur le site officiel de YBN x New Jack City. Serveur GTA RP basé sur une mentalité US et une immersion totale.  
+      Rejoins une communauté mature avec des systèmes propres, une économie réaliste et une ambiance authentique.
     </p>
-  </section>
+  </main>
 
-  <section id="whitelist">
-    <h2>Whitelist 🗽</h2>
+  <main id="whitelist" style="display:none;">
+    <h2>Whitelist</h2>
     <p>
-      Nous sommes un serveur Mentalité US basé sur l'immersion totale.  
-      Pour garantir la meilleure expérience RP possible, la whitelist est obligatoire.  
-      Prends le temps de remplir le formulaire avec sérieux pour faire partie de la communauté.
+      Pour rejoindre notre serveur, tu dois réussir notre QCM. Ce test est conçu pour vérifier ta mentalité RP et ta compréhension des règles.
     </p>
-    <a href="https://tonlienformulaire.com" target="_blank" class="form-button">Formulaire Whitelist</a>
-  </section>
-</main>
+    <a href="https://forms.gle/tonformulaire" target="_blank" class="discord-button" style="margin-top: 20px;">Formulaire Whitelist</a>
+  </main>
 
-<script>
-  const links = document.querySelectorAll('nav a');
-  const sections = document.querySelectorAll('main section');
+  <script>
+    // Simple switch d'onglets
+    const accueilLink = document.getElementById('accueil-link');
+    const whitelistLink = document.getElementById('whitelist-link');
+    const accueilSection = document.getElementById('accueil');
+    const whitelistSection = document.getElementById('whitelist');
 
-  links.forEach(link => {
-    link.addEventListener('click', e => {
+    accueilLink.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = link.getAttribute('data-section');
-
-      // Toggle active class on nav links
-      links.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-
-      // Show/hide sections
-      sections.forEach(sec => {
-        if (sec.id === target) {
-          sec.classList.add('active');
-        } else {
-          sec.classList.remove('active');
-        }
-      });
+      accueilSection.style.display = 'block';
+      whitelistSection.style.display = 'none';
     });
-  });
 
-  // Optional : click logo to go accueil
-  document.getElementById('logo').addEventListener('click', () => {
-    links.forEach(l => l.classList.remove('active'));
-    links[0].classList.add('active');
-    sections.forEach(sec => {
-      if (sec.id === 'accueil') sec.classList.add('active');
-      else sec.classList.remove('active');
+    whitelistLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      accueilSection.style.display = 'none';
+      whitelistSection.style.display = 'block';
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
