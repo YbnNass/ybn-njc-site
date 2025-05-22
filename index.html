@@ -120,114 +120,264 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>YBN - New Jack City | QCM</title>
-    <style>
-        /* Reset */
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-        }
-        body, html {
-            min-height: 100vh;
-            font-family: 'Arial Black', Arial, sans-serif;
-            background: url('https://i.imgur.com/eXCSd4r.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #f0f0f0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0 20px 40px;
-            text-shadow: 0 0 8px #000;
-        }
-        header {
-            width: 100%;
-            padding: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(0,0,0,0.7);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        header img {
-            height: 50px;
-        }
-        nav a {
-            color: #00ff99;
-            text-decoration: none;
-            font-weight: 700;
-            margin-left: 30px;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-        nav a:hover, nav a.active {
-            color: #00cc77;
-            text-shadow: 0 0 6px #00cc77;
-        }
-        main {
-            margin-top: 100px;
-            max-width: 900px;
-            background: rgba(0,0,0,0.75);
-            border-radius: 15px;
-            padding: 25px 35px;
-            box-shadow: 0 0 30px #00ff9977;
-            flex-grow: 1;
-        }
-        iframe {
-            width: 100%;
-            height: 900px;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 0 15px #00ff99cc;
-        }
-        footer {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #666;
-            text-shadow: none;
-        }
-        @media (max-width: 600px) {
-            main {
-                max-width: 90vw;
-                padding: 20px 15px;
-            }
-            nav a {
-                margin-left: 20px;
-                font-size: 1rem;
-            }
-            iframe {
-                height: 650px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YBN x New Jack City - Whitelist QCM</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap');
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      color: #eee;
+      font-family: 'Roboto', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #111;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 0 15px #ff3f3f88;
+    }
+    header img {
+      height: 50px;
+      user-select: none;
+    }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      margin: 0;
+      color: #ff3f3f;
+      text-shadow: 0 0 8px #ff3f3f;
+      user-select: none;
+    }
+    nav {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+      box-shadow: inset 0 -3px 10px #ff3f3f66;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: #ff3f3faa;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    nav button.active,
+    nav button:hover {
+      color: #ff3f3f;
+      text-shadow: 0 0 10px #ff3f3f;
+    }
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 30px auto 50px auto;
+      background: #111;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #ff3f3faa;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      min-height: 500px;
+    }
+    .page-section {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .page-section.active {
+      display: flex;
+    }
+    /* Accueil styling */
+    .welcome-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+    .welcome-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 28px;
+      color: #ff3f3f;
+      text-shadow: 0 0 10px #ff3f3f;
+      margin-bottom: 15px;
+    }
+    .rules-list {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: inset 0 0 15px #ff3f3f66;
+      color: #eee;
+      font-size: 16px;
+      line-height: 1.5;
+      list-style: inside disc;
+    }
+    /* QCM styling */
+    button.action-btn {
+      background-color: #ff3f3f;
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 18px;
+      padding: 15px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff3f3f88;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    button.action-btn:hover {
+      background-color: #e03535;
+      box-shadow: 0 0 25px #e03535cc;
+    }
+    #reglement-content {
+      display: none;
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: inset 0 0 15px #ff3f3f66;
+      color: #eee;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 20px;
+      user-select: none;
+    }
+    /* Responsive */
+    @media (max-width: 650px) {
+      main {
+        margin: 20px 15px 40px 15px;
+        padding: 20px;
+      }
+      nav button {
+        font-size: 16px;
+        padding: 8px 15px;
+      }
+      button.action-btn {
+        font-size: 16px;
+        padding: 12px 25px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="https://i.imgur.com/wwR4pA3.png" alt="Logo YBN New Jack City" />
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="qcm.html" class="active">QCM</a>
-        </nav>
-    </header>
 
-    <main>
-        <!-- Intégration Google Forms -->
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSftBIP7k03x1KxxcTNPqH6mZQOZh_JnKzY5lOdp1Cq2O9kn0kQ/viewform?embedded=true" 
-          frameborder="0" 
-          marginheight="0" 
-          marginwidth="0"
-          title="Formulaire Whitelist YBN NJC"
-          >
-          Chargement…
-        </iframe>
-    </main>
+<header>
+  <img src="https://i.imgur.com/wwR4pA3.png" alt="YBN x NJC Logo" />
+  <h1>YBN x New Jack City</h1>
+</header>
 
-    <footer>
-        &copy; 2025 YBN x New Jack City - Tous droits réservés
-    </footer>
+<nav>
+  <button class="active" data-target="accueil">Accueil</button>
+  <button data-target="qcm">QCM</button>
+</nav>
+
+<main>
+  <section id="accueil" class="page-section active">
+    <h2 class="welcome-title">Bienvenue dans l'univers YBN x NJC</h2>
+    <p class="welcome-text">
+      Wassup Bro, t'es ici pour rejoindre la famille YBN x New Jack City, la street mentalité RP à l’américaine. Avant d’ouvrir ton mic, t’as un QCM à remplir, mais surtout prends 2 minutes pour checker les règles :
+    </p>
+    <ul class="rules-list">
+      <li>Respecte le RP US, mentalité 100% immersion, pas de débordement.</li>
+      <li>Pas de cheat, ni triche, c’est blacklist direct.</li>
+      <li>Micro obligatoire, on veut de la bonne comm’ fluide.</li>
+      <li>Pas d’insulte ou de drama hors RP, on garde ça clean.</li>
+      <li>Être majeur, minimum 300h de jeu FiveM, c’est la base.</li>
+    </ul>
+    <p class="welcome-text">
+      Sois sérieux, ce QCM va déterminer si t’es ready pour l’aventure.
+    </p>
+  </section>
+
+  <section id="qcm" class="page-section">
+    <button class="action-btn" id="open-qcm-btn">Remplir le QCM</button>
+    <button class="action-btn" id="toggle-reglement-btn" style="margin-top:15px;">Afficher le Règlement</button>
+    <div id="reglement-content">
+      <h3>Règlement YBN x New Jack City</h3>
+      <ul>
+        <li>Respect strict du RP à la mentalité US.</li>
+        <li>Pas de cheat, hack ou exploit, sanction immédiate.</li>
+        <li>Micro obligatoire, bonne communication requise.</li>
+        <li>Pas de propos racistes, sexistes ou injurieux hors RP.</li>
+        <li>Être majeur et avoir minimum 300h de jeu sur FiveM.</li>
+        <li>Respect des autres joueurs et du staff à tout moment.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 YBN x New Jack City - Tous droits réservés
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('nav button');
+  const sections = document.querySelectorAll('.page-section');
+  const openQcmBtn = document.getElementById('open-qcm-btn');
+  const toggleReglementBtn = document.getElementById('toggle-reglement-btn');
+  const reglementContent = document.getElementById('reglement-content');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Retire active sur tous les boutons
+      buttons.forEach(b => b.classList.remove('active'));
+      // Ajoute active au bouton cliqué
+      btn.classList.add('active');
+
+      // Affiche la bonne section
+      const target = btn.getAttribute('data-target');
+      sections.forEach(sec => {
+        if (sec.id === target) {
+          sec.classList.add('active');
+        } else {
+          sec.classList.remove('active');
+        }
+      });
+
+      // Quand on change d’onglet, cache le règlement
+      if(target !== 'qcm') {
+        reglementContent.style.display = 'none';
+        toggleReglementBtn.textContent = 'Afficher le Règlement';
+      }
+    });
+  });
+
+  openQcmBtn.addEventListener('click', () => {
+    // Ouvre le Google Forms dans un nouvel onglet
+    window.open('https://docs.google.com/forms/d/e/TON_FORM_ID/viewform', '_blank');
+  });
+
+  toggleReglementBtn.addEventListener('click', () => {
+    if (reglementContent.style.display === 'none' || reglementContent.style.display === '') {
+      reglementContent.style.display = 'block';
+      toggleReglementBtn.textContent = 'Cacher le Règlement';
+    } else {
+      reglementContent.style.display = 'none';
+      toggleReglementBtn.textContent = 'Afficher le Règlement';
+    }
+  });
+</script>
+
 </body>
 </html>
