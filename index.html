@@ -1,500 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ybn-Njc RP - Whitelist</title>
-<style>
-  body {
-    background: #121212;
-    color: #eee;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; padding: 0;
-  }
-  header {
-    background: #1e1e1e;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  header img {
-    height: 40px;
-  }
-  nav a {
-    color: #eee;
-    text-decoration: none;
-    margin-right: 20px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  nav a.active {
-    color: #f90;
-    border-bottom: 2px solid #f90;
-  }
-  main {
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
-  }
-  .btn-discord {
-    background: #7289da;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    font-weight: 700;
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  h1, h2 {
-    margin-top: 0;
-  }
-  .pre-requis {
-    background: #222;
-    padding: 15px;
-    border-radius: 6px;
-    margin-bottom: 30px;
-  }
-  /* QCM styles */
-  form {
-    background: #222;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  fieldset {
-    border: none;
-    margin-bottom: 20px;
-  }
-  legend {
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  label {
-    display: block;
-    margin-bottom: 6px;
-    cursor: pointer;
-  }
-  input[type="radio"] {
-    margin-right: 10px;
-  }
-  button[type="submit"] {
-    background: #f90;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  .result {
-    margin-top: 20px;
-    font-size: 1.2em;
-    font-weight: 700;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YBN - New Jack City</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #0f0f0f;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header img {
+      max-width: 200px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 1rem auto;
+      line-height: 1.5;
+    }
+
+    .btn-container {
+      margin: 2rem;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      background-color: #ff3c00;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff2200;
+    }
+
+    iframe {
+      width: 90%;
+      height: 1000px;
+      border: none;
+      margin-bottom: 4rem;
+      max-width: 900px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <img src="https://i.imgur.com/dRr5RVQ.png" alt="Ybn-Njc Logo" />
-  <nav>
-    <a href="#" id="link-home" class="active">Accueil</a>
-    <a href="#" id="link-wl">Whitelist</a>
-  </nav>
-</header>
-
-<main id="content">
-
-  <!-- PAGE ACCUEIL -->
-  <section id="home-page">
-    <h1>Ybn-Njc RP</h1>
-    <p><strong>Server Menta US - No Modération IG - WL +18 - Staff Réactif et Strict</strong></p>
-    <a href="https://discord.gg/46fmEXcwwD" target="_blank" class="btn-discord">Rejoins notre Discord</a>
-
-    <div class="pre-requis">
-      <h2>Pré-requis pour la whitelist</h2>
-      <ul>
-        <li>Être majeur (+18 ans)</li>
-        <li>Avoir un bon micro</li>
-        <li>Connaissance minimum de la mentalité US RP</li>
-      </ul>
+  <header>
+    <img src="https://i.imgur.com/CuYiKPG.png" alt="Logo YBN - NJC">
+    <h1>YBN × New Jack City</h1>
+    <p>Wassup bro 👋 Bienvenue sur le serveur <strong>YBN × NJC</strong>.<br>Avant de passer en vocal avec le staff, merci de remplir ce QCM pour valider ta whitelist !<br>Sois précis, respecte la mentalité US et montre que t’es prêt pour la rue.</p>
+    <div class="btn-container">
+      <a class="btn" href="https://discord.gg/tonliendiscord" target="_blank">Accès vocal Discord 🔊</a>
     </div>
-  </section>
+  </header>
 
-  <!-- PAGE WHITELIST -->
-  <section id="wl-page" style="display:none;">
-    <h1>Whitelist - QCM RP</h1>
-    <form id="qcm-form">
-      <!-- QUESTIONS INSÉRÉES VIA JS -->
-      <button type="submit">Valider le QCM</button>
-    </form>
-    <div class="result" id="result"></div>
-  </section>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSer5eZfdfHBGG6JZFKrpAMXMmz1GIqMnvLc0pMMhGVdZ_ogRg/viewform?embedded=true" allowfullscreen loading="lazy">Chargement…</iframe>
 
-</main>
-
-<script>
-const questions = [
-  {question:"À quoi correspond le terme Selfishness RP ?", answers:[
-    "Un terme pour l'usage d'armes dans une scène de combat",
-    "Un langage secret entre joueurs",
-    "rp Individualiste",
-    "L'utilisation d'informations hors RP par un personnage"
-  ], correct:2},
-
-  {question:"Qu'est-ce que le \"powergaming\" ?", answers:[
-    "Utiliser des informations HRP pour obtenir un avantage",
-    "Utiliser des moyens irréalistes pour accomplir des actions",
-    "Le fait de se reposer sur d'autres joueurs",
-    "Une approche coopérative pour le jeu de groupe"
-  ], correct:1},
-
-  {question:"Dans une situation RP, ton personnage est blessé. Que fais-tu pour respecter le RP ?", answers:[
-    "Continuer comme si de rien n'était",
-    "Appeler immédiatement à l'aide sans émettre de douleur",
-    "Rester au sol et simuler la douleur de manière réaliste",
-    "Quitter le serveur"
-  ], correct:2},
-
-  {question:"Le \"Fear RP\" signifie :", answers:[
-    "Ne jamais faire peur aux autres joueurs",
-    "Jouer avec une logique de peur face aux dangers",
-    "Ne pas montrer d'émotions",
-    "Affronter les autres sans jamais fuir"
-  ], correct:1},
-
-  {question:"Quelle est l'attitude correcte face à un \"perma-death\" ?", answers:[
-    "Recréer immédiatement son personnage",
-    "Reprendre le même personnage sous une autre identité",
-    "Accepter la mort définitive du personnage",
-    "Changer de serveur pour éviter cette perte"
-  ], correct:2},
-
-  {question:"Quelle est l'action typique d'un \"cop-baiting\" ?", answers:[
-    "Attaquer les PNJ sans raison",
-    "Provoquer intentionnellement les forces de l'ordre",
-    "Appeler des amis pour se battre contre la police",
-    "Ignorer les forces de l'ordre"
-  ], correct:1},
-
-  {question:"Si tu es confronté à un \"random deathmatch\" (RDM), que dois-tu faire ?", answers:[
-    "Répondre par la violence",
-    "Appeler des amis pour se défendre",
-    "Ignorer l'attaque et la signaler aux admins",
-    "Quitter la scène immédiatement"
-  ], correct:2},
-
-  {question:"Que signifie \"passive RP\" ?", answers:[
-    "Ignorer les autres joueurs",
-    "Jouer des scènes sans conflits directs",
-    "Éviter les dialogues",
-    "Se concentrer uniquement sur les actions de combat"
-  ], correct:1},
-
-  {question:"Quel est le terme pour l'utilisation de commandes texte pour décrire des actions ?", answers:[
-    "Powergaming",
-    "Emote RP",
-    "Meta RP",
-    "Chat RP"
-  ], correct:1},
-
-  {question:"Le \"Fear RP\" impose au joueur de :", answers:[
-    "Réagir comme si son personnage n'avait jamais peur",
-    "Affronter tous les dangers sans hésitation",
-    "Agir de façon prudente en cas de menace de vie",
-    "Utiliser des armes dès qu'il y a un danger"
-  ], correct:2},
-
-  {question:"Dans un RP \"US\" immersif, les termes policiers doivent être utilisés de manière réaliste. Quel terme est correct pour désigner un agent ?", answers:[
-    "Officer",
-    "Policeman",
-    "Sheriff",
-    "Mr l'agent"
-  ], correct:0},
-
-  {question:"Que signifie \"void\" dans une scène RP ?", answers:[
-    "Effacer ou annuler une scène",
-    "Recommencer un personnage",
-    "Ignorer un message",
-    "Envoyer des informations HRP"
-  ], correct:0},
-
-  {question:"Dans une situation de prise d'otage, que doivent éviter les joueurs ?", answers:[
-    "De faire de longues négociations",
-    "De faire preuve de Fear RP",
-    "De recourir à l'arme rapidement",
-    "D'utiliser des informations HRP"
-  ], correct:3},
-
-  {question:"Que veut dire \"PK\" (Player Kill) ?", answers:[
-    "Mort définitive d’un personnage",
-    "Mort temporaire nécessitant soins",
-    "Exclusion du serveur",
-    "Vol d'argent et d'objets"
-  ], correct:0},
-
-  {question:"Le terme \"RP immersif\" signifie que :", answers:[
-    "Les joueurs jouent comme dans la vraie vie",
-    "Le serveur propose beaucoup de mods",
-    "Le RP est uniquement pour les policiers",
-    "On joue sans aucun dialogue"
-  ], correct:0},
-
-  {question:"Comment réagir en cas de conflit RP avec un autre joueur ?", answers:[
-    "Ignorer et continuer le jeu",
-    "Sortir du serveur immédiatement",
-    "Gérer le conflit en jeu, rester respectueux",
-    "Utiliser des insultes HRP"
-  ], correct:2},
-
-  {question:"Que signifie \"Meta Gaming\" ?", answers:[
-    "Utiliser des infos RP pour s’améliorer",
-    "Utiliser des infos HRP dans le jeu RP",
-    "Parler uniquement avec ses amis",
-    "Créer un personnage secondaire"
-  ], correct:1},
-
-  {question:"Quelle est la meilleure façon de communiquer en RP ?", answers:[
-    "Parler en /me et chat RP",
-    "Envoyer des messages HRP",
-    "Utiliser uniquement le chat vocal",
-    "Ignorer les autres joueurs"
-  ], correct:0},
-
-  {question:"Le terme \"No Pixel\" fait référence à :", answers:[
-    "Un style de pixel art",
-    "Un célèbre serveur RP US",
-    "Un bug graphique",
-    "Une technique de combat"
-  ], correct:1},
-
-  {question:"Quel est le rôle du staff lors d'une scène RP conflictuelle ?", answers:[
-    "Intervenir en cas de triche ou RDM",
-    "Prendre parti pour un joueur",
-    "Ignorer les conflits",
-    "Punir systématiquement tous les joueurs"
-  ], correct:0},
-
-  {question:"Qu'est-ce que le \"VDM\" (Vehicle Deathmatch) ?", answers:[
-    "Conduire de façon réaliste",
-    "Utiliser un véhicule pour tuer sans raison RP",
-    "Éviter les véhicules en RP",
-    "Faire des courses de voitures"
-  ], correct:1},
-
-  {question:"Dans un RP US réaliste, que signifie \"911\" ?", answers:[
-    "Un appel d'urgence",
-    "Une plaque d'immatriculation",
-    "Un badge de police",
-    "Une équipe médicale"
-  ], correct:0},
-
-  {question:"Quel est l'impact du \"Fail RP\" ?", answers:[
-    "Améliorer le RP",
-    "Ruiner l’immersion par des actions irréalistes",
-    "Créer des scènes plus drôles",
-    "Aider à mieux comprendre l'histoire"
-  ], correct:1},
-
-  {question:"Quelle attitude est recommandée face à un joueur qui fait du \"Powergaming\" ?", answers:[
-    "L’ignorer",
-    "Signaler au staff",
-    "Répliquer de la même façon",
-    "Quitter le serveur"
-  ], correct:1},
-
-  {question:"Quelle est la règle d’or pour utiliser des armes en RP ?", answers:[
-    "Tirer dès qu’on voit un joueur",
-    "Utiliser les armes uniquement en légitime défense ou situations RP justifiées",
-    "Faire un massacre pour le fun",
-    "Ignorer les conséquences"
-  ], correct:1},
-
-  {question:"Le \"No Meta\" est :", answers:[
-    "Interdit d’utiliser ses connaissances HRP en RP",
-    "Autorisé dans certaines situations",
-    "Un mode de jeu spécial",
-    "Une technique de combat"
-  ], correct:0},
-
-  {question:"Que signifie \"Face RP\" ?", answers:[
-    "Rester impassible en toute situation",
-    "Jouer selon la personnalité et les émotions du personnage",
-    "Ignorer les émotions des autres",
-    "Faire des grimaces"
-  ], correct:1},
-
-  {question:"Lors d’un braquage RP, que faut-il éviter ?", answers:[
-    "Respecter les règles de RP",
-    "Communiquer clairement entre joueurs",
-    "Utiliser des dialogues HRP pour tricher",
-    "Simuler le stress et la peur"
-  ], correct:2},
-
-  {question:"Quel est le but principal du RP US ?", answers:[
-    "Créer des histoires cohérentes et immersives",
-    "Faire des kills sans raison",
-    "Ignorer les autres joueurs",
-    "Construire un personnage sans limites"
-  ], correct:0},
-
-  {question:"Qu'est-ce qu’un \"squad\" dans le contexte RP ?", answers:[
-    "Un groupe de joueurs organisés pour RP ensemble",
-    "Un personnage secondaire",
-    "Un bug serveur",
-    "Un véhicule spécial"
-  ], correct:0},
-
-  {question:"Qu’est-ce qu’un \"situationnel\" dans RP ?", answers:[
-    "Une scène jouée selon les circonstances en RP",
-    "Un bug graphique",
-    "Une triche en jeu",
-    "Un personnage secondaire"
-  ], correct:0},
-
-  {question:"Que faire en cas de désaccord sur une scène RP ?", answers:[
-    "Déconnecter sans prévenir",
-    "Discuter calmement en RP ou HRP pour régler le conflit",
-    "Ignorer le joueur",
-    "Insulter en HRP"
-  ], correct:1},
-
-  {question:"Quel est le rôle du /me en RP ?", answers:[
-    "Décrire les actions de son personnage",
-    "Parler hors RP",
-    "Donner des ordres au staff",
-    "Ignorer les autres joueurs"
-  ], correct:0},
-
-  {question:"En RP, \"combat équitable\" signifie :", answers:[
-    "Utiliser des moyens réalistes et justes",
-    "Tricher pour gagner",
-    "Appeler des amis pour aider",
-    "Ignorer les règles de combat"
-  ], correct:0},
-
-  {question:"La règle du \"1 life 1 body\" signifie :", answers:[
-    "Un personnage = un corps, pas de respawn rapide",
-    "On peut respawn autant qu'on veut",
-    "Changer de personnage à volonté",
-    "Ignorer la mort du personnage"
-  ], correct:0},
-
-  {question:"Le \"Fear RP\" est important parce que :", answers:[
-    "Il augmente le réalisme et la tension des scènes",
-    "Il fait perdre du temps",
-    "Il n’a aucun intérêt",
-    "Il est uniquement pour les policiers"
-  ], correct:0},
-
-  {question:"Que signifie \"No HRP\" dans une conversation ?", answers:[
-    "Pas de discussions hors RP dans le chat RP",
-    "Interdire l’usage du chat vocal",
-    "Ne pas utiliser le chat textuel",
-    "Ignorer les autres joueurs"
-  ], correct:0},
-
-  {question:"Dans un RP réaliste, que signifie \"Fear RP\" quand on est menacé ?", answers:[
-    "Faire semblant d’avoir peur",
-    "Ne pas montrer de peur pour être fort",
-    "Réagir avec logique à la peur et danger",
-    "Fuir systématiquement"
-  ], correct:2},
-
-  {question:"En RP, \"Méta\" désigne :", answers:[
-    "Utiliser des infos HRP dans le jeu RP",
-    "Faire un RP de haute qualité",
-    "Créer un nouveau personnage",
-    "Utiliser le chat vocal"
-  ], correct:0},
-
-  {question:"Que signifie \"Whitelisted\" ?", answers:[
-    "Avoir passé la sélection pour jouer sur le serveur",
-    "Être banni",
-    "Être invité sur Discord",
-    "Être un modérateur"
-  ], correct:0},
-
-  {question:"Quel est l’intérêt principal du RP US ?", answers:[
-    "Créer une immersion réaliste et respectueuse",
-    "Faire du PvP intensif",
-    "Ignorer les autres joueurs",
-    "Utiliser tous les mods possibles"
-  ], correct:0}
-];
-
-// Génération des questions dans le formulaire
-const form = document.getElementById('qcm-form');
-
-questions.forEach((q, i) => {
-  const fieldset = document.createElement('fieldset');
-  const legend = document.createElement('legend');
-  legend.textContent = `${i + 1}. ${q.question}`;
-  fieldset.appendChild(legend);
-
-  q.answers.forEach((ans, j) => {
-    const label = document.createElement('label');
-    const input = document.createElement('input');
-    input.type = 'radio';
-    input.name = `q${i}`;
-    input.value = j;
-    label.appendChild(input);
-    label.appendChild(document.createTextNode(ans));
-    fieldset.appendChild(label);
-  });
-
-  form.insertBefore(fieldset, form.querySelector('button'));
-});
-
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  let score = 0;
-  for (let i = 0; i < questions.length; i++) {
-    const selected = form.querySelector(`input[name=q${i}]:checked`);
-    if (!selected) {
-      alert(`Question ${i + 1} non répondue.`);
-      return;
-    }
-    if (parseInt(selected.value, 10) === questions[i].correct) {
-      score++;
-    }
-  }
-
-  const resultDiv = document.getElementById('result');
-  if (score >= 38) {
-    resultDiv.style.color = '#4caf50';
-    resultDiv.textContent = `✅ Félicitations ! Vous avez obtenu ${score} / ${questions.length}. Vous êtes whitelisté.`;
-  } else {
-    resultDiv.style.color = '#f44336';
-    resultDiv.textContent = `❌ Vous avez obtenu ${score} / ${questions.length}. Il vous faut au moins 38 bonnes réponses pour être whitelisté.`;
-  }
-});
-
-// Gestion simple des pages
-const linkHome = document.getElementById('link-home');
-const linkWL = document.getElementById('link-wl');
-const homePage = document.getElementById('home-page');
-const wlPage = document.getElementById('wl-page');
-
-linkHome.onclick = e => {
-  e.preventDefault();
-  homePage.style.display = 'block';
-  wlPage.style.display = 'none';
-  linkHome.classList.add('active');
-  linkWL.classList.remove('active');
-};
-linkWL.onclick = e => {
-  e.preventDefault();
-  homePage.style.display = 'none';
-  wlPage.style.display = 'block';
-  linkWL.classList.add('active');
-  linkHome.classList.remove('active');
-};
-</script>
-
+  <footer>
+    &copy; 2025 YBN × NJC — Tous droits réservés.
+  </footer>
 </body>
 </html>
