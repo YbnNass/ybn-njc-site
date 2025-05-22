@@ -10,17 +10,17 @@
       margin: 0;
       padding: 0;
       font-family: 'Urbanist', sans-serif;
-      background-color: #0e0e0e;
-      color: #5FAF9B;
+      background-color: #121212;
+      color: #ddd;
     }
 
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 40px;
-      background-color: #0e0e0e;
-      position: relative;
+      padding: 15px 40px;
+      background-color: #1f1f1f;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
     }
 
     .logo-title {
@@ -29,107 +29,84 @@
     }
 
     header img {
-      width: 70px;
-      height: auto;
+      width: 60px;
       margin-right: 15px;
     }
 
     header h1 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 700;
+      color: #58a6ff;
       margin: 0;
-    }
-
-    header h1 .ybn {
-      color: #5FAF9B;
-    }
-
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
     }
 
     nav {
       display: flex;
-      align-items: center;
-      gap: 20px;
+      gap: 25px;
     }
 
     nav a {
-      color: #5FAF9B;
+      color: #bbb;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 1rem;
-      padding: 8px 14px;
-      border: 2px solid #5FAF9B;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 5px #5FAF9B33;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+      transition: color 0.25s ease;
     }
 
     nav a:hover {
-      color: #ffdd33;
-      border-color: #ffdd33;
-      box-shadow: 0 0 12px #ffdd33;
-      background-color: rgba(255, 221, 51, 0.15);
-      cursor: pointer;
+      color: #58a6ff;
     }
 
     .discord-login {
-      background: linear-gradient(135deg, #228B22, #2E8B57);
-      color: #d0f0c0;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-weight: 900;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      box-shadow: 0 0 10px #5FAF9BAA;
-      border: 2px solid #5FAF9B;
-      transition: all 0.3s ease;
-      position: absolute;
-      top: 20px;
-      right: 40px;
+      background-color: #5865F2;
+      color: white;
+      padding: 9px 18px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 0.9rem;
       text-decoration: none;
+      transition: background-color 0.3s ease;
     }
 
     .discord-login:hover {
-      background: linear-gradient(135deg, #ffdd33, #ffc107);
-      color: #1a1a1a;
-      box-shadow: 0 0 20px #ffdd33;
-      border-color: #ffdd33;
-      cursor: pointer;
-      transform: scale(1.05);
+      background-color: #4752c4;
     }
 
     main {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
-      color: #5FAF9B;
+      line-height: 1.6;
     }
 
     main h2 {
       font-size: 2rem;
-      margin-bottom: 20px;
       font-weight: 700;
-      color: #5FAF9B;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      margin-bottom: 25px;
+      color: #58a6ff;
     }
 
     main p {
       font-size: 1.1rem;
-      line-height: 1.7;
+      color: #ccc;
+      margin-bottom: 40px;
     }
 
     main img {
       width: 100%;
-      border-radius: 15px;
-      margin-bottom: 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+    }
+
+    /* Section whitelist */
+
+    #whitelist iframe {
+      width: 100%;
+      height: 750px;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
     }
 
     @media (max-width: 768px) {
@@ -138,72 +115,44 @@
         align-items: flex-start;
       }
       nav {
-        margin-top: 10px;
-        flex-wrap: wrap;
-        gap: 10px;
+        margin-top: 15px;
+        gap: 15px;
       }
       .discord-login {
-        position: static;
-        margin-top: 10px;
+        margin-top: 15px;
+        align-self: center;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="header-left">
-      <div class="logo-title">
-        <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City" />
-        <h1><span class="ybn">YBN</span> x NewJackCity 🗽</h1>
-      </div>
-      <nav>
-        <a href="#">Home Turf</a>
-        <a href="#whitelist">Whitelist Spot</a>
-        <a href="https://discord.gg/tonliendiscord" target="_blank" rel="noopener noreferrer">Join the Discord</a>
-      </nav>
+    <div class="logo-title">
+      <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City" />
+      <h1>YBN x NewJackCity</h1>
     </div>
-    <a id="loginBtn" class="discord-login" href="#">Hop In</a>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#whitelist">Whitelist</a>
+      <a href="https://discord.gg/tonliendiscord" target="_blank" rel="noopener noreferrer">Discord</a>
+    </nav>
+    <a id="loginBtn" class="discord-login" href="#">Connexion</a>
   </header>
 
   <main>
-    <h2>Présentation</h2>
-    <img src="https://i.ibb.co/hRV0h5GJ/9ca6921b-735f-4cf6-8651-55f34c9d4d63.png" alt="Présentation YBN" />
-    <p>
-      Bienvenue sur le site officiel de YBN : New Jack City. Serveur GTA RP inspiré de la street US, ambiance réaliste, personnages profonds et scènes sérieuses garanties.  
-      Rejoins une communauté mature, avec des systèmes propres, une économie réaliste et une immersion totale dans le monde du RP.
-    </p>
+    <section id="presentation">
+      <h2>Présentation</h2>
+      <img src="https://i.ibb.co/hRV0h5GJ/9ca6921b-735f-4cf6-8651-55f34c9d4d63.png" alt="Présentation YBN" />
+      <p>
+        Bienvenue sur le site officiel de YBN : New Jack City. Serveur GTA RP inspiré par une immersion profonde, une économie réaliste et des personnages travaillés. Rejoins une communauté mature où le jeu sérieux prime.
+      </p>
+    </section>
 
-    <main>
-  <!-- Section Présentation existante -->
-  <h2>Présentation</h2>
-  <img src="https://i.ibb.co/hRV0h5GJ/9ca6921b-735f-4cf6-8651-55f34c9d4d63.png" alt="Présentation YBN" />
-  <p>
-    Bienvenue sur le site officiel de YBN : New Jack City. Serveur GTA RP inspiré de la street US, ambiance réaliste, personnages profonds et scènes sérieuses garanties.  
-    Rejoins une communauté mature, avec des systèmes propres, une économie réaliste et une immersion totale dans le monde du RP.
-  </p>
-
-  <!-- Nouvelle section Whitelist avec QCM intégré -->
-  <section id="whitelist" style="margin-top: 60px;">
-    <h2>Whitelist - Passe ton QCM</h2>
-    <p>
-      Pour rejoindre la communauté YBN x NewJackCity, tu dois remplir ce questionnaire.  
-      Ce QCM permet de valider ta mentalité RP et ta compréhension des règles.  
-      Une fois validé, tu pourras accéder au vocal et recevoir ton rôle sur notre Discord.
-    </p>
-    <iframe 
-      src="https://docs.google.com/forms/d/e/TON-LIEN-GOOGLE-FORMS/viewform?embedded=true" 
-      width="100%" 
-      height="800" 
-      frameborder="0" 
-      marginheight="0" 
-      marginwidth="0"
-      style="border-radius: 15px; box-shadow: 0 0 20px #5FAF9B;"
-    >
-      Chargement…
-    </iframe>
-  </section>
-</main>
-
+    <section id="whitelist">
+      <h2>Whitelist - QCM d’inscription</h2>
+      <p>Complète le questionnaire ci-dessous pour accéder au vocal et recevoir ton rôle Discord.</p>
+      <iframe src="https://docs.google.com/forms/d/e/TON_ID_DE_FORMULAIRE/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+    </section>
   </main>
 
   <script>
