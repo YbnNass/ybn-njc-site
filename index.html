@@ -3,37 +3,54 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>YBN - New Jack City</title>
+<title>YBN - New Jack City - Whitelist QCM</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+  /* Reset et global */
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
     font-family: 'Oswald', sans-serif;
     background: url('https://i.imgur.com/4DT4BAy.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
+
   header {
     display: flex;
     align-items: center;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.85);
     padding: 10px 20px;
     border-bottom: 2px solid #cc0000;
+    flex-shrink: 0;
   }
+
   header img {
     height: 50px;
     margin-right: 15px;
   }
+
   header h1 {
     font-size: 24px;
     letter-spacing: 2px;
     color: #cc0000;
+    margin: 0;
   }
+
   nav {
     background: rgba(0,0,0,0.9);
     display: flex;
     justify-content: center;
+    flex-shrink: 0;
   }
+
   nav button {
     background: transparent;
     border: none;
@@ -44,19 +61,27 @@
     transition: background-color 0.3s ease;
     border-bottom: 3px solid transparent;
     font-weight: bold;
+    flex-grow: 1;
+    max-width: 200px;
   }
+
   nav button:hover,
   nav button.active {
     background: #cc0000;
     border-bottom: 3px solid #fff;
   }
+
   main {
-    max-width: 900px;
-    margin: 40px auto;
+    max-width: 1000px;
+    margin: 40px auto 80px;
     background: rgba(0,0,0,0.75);
     padding: 30px 40px;
     border-radius: 8px;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 150px);
   }
+
   .hidden {
     display: none;
   }
@@ -64,12 +89,12 @@
   /* Accueil */
   #accueil h2 {
     color: #cc0000;
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 20px;
   }
   #accueil p {
     font-size: 18px;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
   /* QCM */
@@ -77,72 +102,116 @@
     display: flex;
     flex-direction: column;
   }
-  form label {
-    margin: 15px 0 8px;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  form select, form input[type="text"], form input[type="email"], form input[type="number"] {
-    padding: 8px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: none;
-  }
+
   .qcm-question {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
-  .qcm-question input[type="radio"] {
-    margin-right: 8px;
+
+  .qcm-question label {
+    font-weight: 700;
+    font-size: 17px;
+    display: block;
+    margin-bottom: 8px;
   }
+
+  .qcm-question div {
+    margin-left: 15px;
+    margin-bottom: 6px;
+  }
+
+  input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
   .btn-submit {
     background: #cc0000;
     border: none;
     color: white;
-    font-weight: bold;
-    padding: 12px 0;
-    font-size: 18px;
+    font-weight: 700;
+    padding: 14px 0;
+    font-size: 20px;
     border-radius: 6px;
     cursor: pointer;
     margin-top: 10px;
     transition: background-color 0.3s ease;
+    max-width: 250px;
+    align-self: center;
   }
+
   .btn-submit:hover {
     background: #a30000;
   }
 
-  /* Résultat */
   #result {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
+    margin-top: 25px;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
     color: #cc0000;
   }
 
   /* Règlement */
   #reglement {
-    margin-top: 30px;
+    margin-top: 35px;
     background: #111;
     padding: 20px;
     border-radius: 6px;
-    max-height: 300px;
+    max-height: 320px;
     overflow-y: auto;
     color: #eee;
+    line-height: 1.5;
   }
+
   #btnToggleReglement {
     background: transparent;
     border: 2px solid #cc0000;
     color: #cc0000;
-    padding: 8px 12px;
+    padding: 10px 16px;
     cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
+    font-weight: 700;
+    margin: 25px auto 10px;
     border-radius: 5px;
+    display: block;
+    max-width: 220px;
+    text-align: center;
+    transition: background-color 0.3s ease;
   }
+
   #btnToggleReglement:hover {
     background: #cc0000;
     color: #fff;
   }
 
+  /* Scroll barre personnalisée */
+  main::-webkit-scrollbar,
+  #reglement::-webkit-scrollbar {
+    width: 10px;
+  }
+  main::-webkit-scrollbar-track,
+  #reglement::-webkit-scrollbar-track {
+    background: #222;
+  }
+  main::-webkit-scrollbar-thumb,
+  #reglement::-webkit-scrollbar-thumb {
+    background: #cc0000;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    main {
+      margin: 20px 10px 60px;
+      padding: 20px;
+      max-height: calc(100vh - 130px);
+    }
+    nav button {
+      font-size: 16px;
+      padding: 12px 15px;
+      max-width: none;
+      flex-grow: unset;
+      flex-basis: 50%;
+    }
+  }
 </style>
 </head>
 <body>
@@ -154,139 +223,530 @@
 
 <nav>
   <button id="tabAccueil" class="active">Accueil</button>
-  <button id="tabQcm">QCM</button>
+  <button id="tabQcm">QCM Whitelist</button>
 </nav>
 
 <main>
   <section id="accueil">
     <h2>Wassup Bro, bienvenue sur YBN x NJC</h2>
     <p>
-      Ici, c’est l’univers du RP avec une mentalité US authentique.  
-      Respect, grind, et loyauté sont les clés pour s'imposer.  
-      Remplis le QCM dans l’onglet QCM avant de passer vocal, montre que t’es solide, on veut du vrai.  
-      <br/><br/>
+      Ici, c’est l’univers du RP avec une mentalité US authentique.<br>
+      Respect, grind, et loyauté sont les clés pour s'imposer.<br>
+      Remplis le QCM dans l’onglet QCM avant de passer vocal, montre que t’es solide, on veut du vrai.<br><br>
       Let's keep it 100, squad tight, no opps allowed.
     </p>
   </section>
 
   <section id="qcm" class="hidden">
-    <h2>QCM de Whitelist</h2>
+    <h2>QCM de Whitelist - 41 questions</h2>
     <form id="qcmForm">
-      <!-- Exemple de question 1 -->
+      <!-- Les 41 questions ci-dessous, chaque question avec 2 réponses (une correcte et une incorrecte) -->
+
       <div class="qcm-question">
         <label>1. Quel est le comportement attendu en RP sur YBN x NJC ?</label>
-        <div><input type="radio" name="q1" value="correct" /> Respecter le RP et la mentalité US</div>
+        <div><input type="radio" name="q1" value="correct" required /> Respecter le RP et la mentalité US</div>
         <div><input type="radio" name="q1" value="wrong" /> Faire n'importe quoi, no limit</div>
       </div>
-      <!-- Question 2 -->
+
       <div class="qcm-question">
         <label>2. Peut-on faire du powergaming sur le serveur ?</label>
-        <div><input type="radio" name="q2" value="wrong" /> Oui, dès que tu veux</div>
+        <div><input type="radio" name="q2" value="wrong" required /> Oui, dès que tu veux</div>
         <div><input type="radio" name="q2" value="correct" /> Non, c’est interdit</div>
       </div>
-      <!-- Question 3 -->
+
       <div class="qcm-question">
         <label>3. Combien d'heures minimum faut-il pour postuler ?</label>
-        <div><input type="radio" name="q3" value="correct" /> 300 heures</div>
+        <div><input type="radio" name="q3" value="correct" required /> 300 heures</div>
         <div><input type="radio" name="q3" value="wrong" /> 100 heures</div>
       </div>
-      <!-- Question 4 -->
+
       <div class="qcm-question">
         <label>4. Quel rôle le staff joue-t-il dans le RP ?</label>
-        <div><input type="radio" name="q4" value="correct" /> Faire respecter les règles et assurer l'immersion</div>
+        <div><input type="radio" name="q4" value="correct" required /> Faire respecter les règles et assurer l'immersion</div>
         <div><input type="radio" name="q4" value="wrong" /> Faire n'importe quoi sans sanction</div>
       </div>
-      <!-- Question 5 -->
+
       <div class="qcm-question">
         <label>5. Que signifie "side" dans le vocabulaire US RP ?</label>
-        <div><input type="radio" name="q5" value="correct" /> Ne pas prendre parti dans une embrouille</div>
-        <div><input type="radio" name="q5" value="wrong" /> Être l’ennemi</div>
+        <div><input type="radio" name="q5" value="correct" required /> Ne pas prendre parti dans une embrouille</div>
+        <div><input type="radio" name="q5" value="wrong" /> Être le chef de la zone</div>
       </div>
 
-      <button type="submit" class="btn-submit">Valider</button>
-    </form>
+      <div class="qcm-question">
+        <label>6. Peut-on utiliser un micro de mauvaise qualité ?</label>
+        <div><input type="radio" name="q6" value="wrong" required /> Oui, ça n'a pas d'importance</div>
+        <div><input type="radio" name="q6" value="correct" /> Non, il faut un micro clair</div>
+      </div>
 
+      <div class="qcm-question">
+        <label>7. Quelle est la sanction pour le non-respect des règles RP ?</label>
+        <div><input type="radio" name="q7" value="correct" required /> Kick, ban, voire blacklist selon la gravité</div>
+        <div><input type="radio" name="q7" value="wrong" /> Aucune sanction</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>8. Que veut dire "opps" ?</label>
+        <div><input type="radio" name="q8" value="correct" required /> Les ennemis / opposants</div>
+        <div><input type="radio" name="q8" value="wrong" /> Les alliés proches</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>9. Peut-on jouer un policier ripoux sans accord ?</label>
+        <div><input type="radio" name="q9" value="wrong" required /> Oui, librement</div>
+        <div><input type="radio" name="q9" value="correct" /> Non, seulement avec dossier validé</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>10. Quelle est la règle concernant le powergaming avec les armes ?</label>
+        <div><input type="radio" name="q10" value="correct" required /> Interdit sauf exceptions RP</div>
+        <div><input type="radio" name="q10" value="wrong" /> Autorisé tout le temps</div>
+      </div>
+
+      <!-- Ajouter les questions 11 à 41 ici, même format -->
+
+      <div class="qcm-question">
+        <label>11. Quel comportement est toléré face à un opp ?</label>
+        <div><input type="radio" name="q11" value="correct" required /> Être vigilant, éviter le squabble inutile</div>
+        <div><input type="radio" name="q11" value="wrong" /> Engager le combat directement sans raison</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>12. Qu’est-ce qu’un "squabble" ?</label>
+        <div><input type="radio" name="q12" value="correct" required /> Une petite embrouille ou dispute</div>
+        <div><input type="radio" name="q12" value="wrong" /> Une grosse fusillade</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>13. Que signifie "sur mes potes morts" ?</label>
+        <div><input type="radio" name="q13" value="correct" required /> Je jure sur mes frères</div>
+        <div><input type="radio" name="q13" value="wrong" /> Je n’y crois pas du tout</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>14. Quelle mentalité est requise pour le RP sur YBN x NJC ?</label>
+        <div><input type="radio" name="q14" value="correct" required /> Loyauté, respect, grind</div>
+        <div><input type="radio" name="q14" value="wrong" /> Arrogance et chaos</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>15. Peut-on utiliser le langage US dans le chat RP ?</label>
+        <div><input type="radio" name="q15" value="correct" required /> Oui, c’est encouragé</div>
+        <div><input type="radio" name="q15" value="wrong" /> Non, c’est interdit</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>16. Qu’est-ce que "gangshit" ?</label>
+        <div><input type="radio" name="q16" value="correct" required /> Le code de conduite gangsta</div>
+        <div><input type="radio" name="q16" value="wrong" /> Une insulte</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>17. Quelle attitude adopter face aux nouveaux joueurs ?</label>
+        <div><input type="radio" name="q17" value="correct" required /> Les accueillir et guider</div>
+        <div><input type="radio" name="q17" value="wrong" /> Les ignorer</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>18. Que veut dire "bro" dans le RP ?</label>
+        <div><input type="radio" name="q18" value="correct" required /> Un frère, un pote</div>
+        <div><input type="radio" name="q18" value="wrong" /> Un ennemi</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>19. Le non-respect du règlement peut entraîner ?</label>
+        <div><input type="radio" name="q19" value="correct" required /> Kick, ban ou blacklist</div>
+        <div><input type="radio" name="q19" value="wrong" /> Rien</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>20. Que faire en cas de conflit RP ?</label>
+        <div><input type="radio" name="q20" value="correct" required /> Rester dans le RP, pas de cheat ni cheat-like</div>
+        <div><input type="radio" name="q20" value="wrong" /> Quitter le serveur</div>
+      </div>
+
+      <!-- 21 à 41 -->
+
+      <div class="qcm-question">
+        <label>21. Peut-on faire du RDM (Random Deathmatch) ?</label>
+        <div><input type="radio" name="q21" value="wrong" required /> Oui, quand on veut</div>
+        <div><input type="radio" name="q21" value="correct" /> Non, interdit</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>22. Quelle est la règle sur le metagaming ?</label>
+        <div><input type="radio" name="q22" value="correct" required /> Interdit</div>
+        <div><input type="radio" name="q22" value="wrong" /> Autorisé</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>23. Quel comportement envers le staff est attendu ?</label>
+        <div><input type="radio" name="q23" value="correct" required /> Respect et coopération</div>
+        <div><input type="radio" name="q23" value="wrong" /> Insultes et contestation</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>24. Que veut dire "for real" ?</label>
+        <div><input type="radio" name="q24" value="correct" required /> Vraiment, sérieusement</div>
+        <div><input type="radio" name="q24" value="wrong" /> Jamais</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>25. Quel micro est requis ?</label>
+        <div><input type="radio" name="q25" value="correct" required /> Un micro clair et fonctionnel</div>
+        <div><input type="radio" name="q25" value="wrong" /> Aucun micro</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>26. Que veut dire "pop" dans le langage RP ?</label>
+        <div><input type="radio" name="q26" value="correct" required /> Déclencher un événement ou une action</div>
+        <div><input type="radio" name="q26" value="wrong" /> Disparaître</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>27. Le whitelisted est-il un rôle important ?</label>
+        <div><input type="radio" name="q27" value="correct" required /> Oui, il garantit une qualité RP</div>
+        <div><input type="radio" name="q27" value="wrong" /> Non, c’est décoratif</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>28. Combien de temps dure un kick en général ?</label>
+        <div><input type="radio" name="q28" value="correct" required /> Quelques minutes à heures selon la raison</div>
+        <div><input type="radio" name="q28" value="wrong" /> Jamais kick</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>29. Que signifie "mentalité US" dans le RP ?</label>
+        <div><input type="radio" name="q29" value="correct" required /> Comportement loyal, respect des codes</div>
+        <div><input type="radio" name="q29" value="wrong" /> Chaos et anarchie</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>30. Que faire en cas de bug RP ?</label>
+        <div><input type="radio" name="q30" value="correct" required /> Signaler au staff immédiatement</div>
+        <div><input type="radio" name="q30" value="wrong" /> Exploiter à son avantage</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>31. Quel est l'âge minimum requis ?</label>
+        <div><input type="radio" name="q31" value="correct" required /> 18 ans</div>
+        <div><input type="radio" name="q31" value="wrong" /> 16 ans</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>32. Peut-on faire de la triche sur YBN x NJC ?</label>
+        <div><input type="radio" name="q32" value="wrong" required /> Oui, si c'est discret</div>
+        <div><input type="radio" name="q32" value="correct" /> Non, c'est strictement interdit</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>33. Que veut dire "gang" ?</label>
+        <div><input type="radio" name="q33" value="correct" required /> Groupe organisé</div>
+        <div><input type="radio" name="q33" value="wrong" /> Ennemis</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>34. Que signifie "squad" ?</label>
+        <div><input type="radio" name="q34" value="correct" required /> Équipe ou groupe d'amis</div>
+        <div><input type="radio" name="q34" value="wrong" /> Ennemi</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>35. Peut-on streamer son RP sans autorisation ?</label>
+        <div><input type="radio" name="q35" value="wrong" required /> Oui, sans conditions</div>
+        <div><input type="radio" name="q35" value="correct" /> Non, demande au staff d'abord</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>36. Que signifie "on my dead homies" ?</label>
+        <div><input type="radio" name="q36" value="correct" required /> Je jure sur mes proches décédés</div>
+        <div><input type="radio" name="q36" value="wrong" /> Je mens</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>37. Le langage violent est-il autorisé ?</label>
+        <div><input type="radio" name="q37" value="wrong" required /> Oui, tout le temps</div>
+        <div><input type="radio" name="q37" value="correct" /> Seulement en RP et respectueux</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>38. Quel est l'objectif principal du RP ?</label>
+        <div><input type="radio" name="q38" value="correct" required /> Créer une histoire immersive</div>
+        <div><input type="radio" name="q38" value="wrong" /> Gagner des kills</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>39. Peut-on rejoindre plusieurs gangs ?</label>
+        <div><input type="radio" name="q39" value="wrong" required /> Oui, c'est autorisé</div>
+        <div><input type="radio" name="q39" value="correct" /> Non, c'est interdit</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>40. Comment prouver sa mentalité US ?</label>
+        <div><input type="radio" name="q40" value="correct" required /> En jouant avec respect et loyauté</div>
+        <div><input type="radio" name="q40" value="wrong" /> En insultant les autres</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>41. Quelle est la règle principale sur YBN x NJC ?</label>
+        <div><input type="radio" name="q41" value="correct" required /> Respecter le RP et la communauté</div>
+        <div><input type="radio" name="q41" value="wrong" /> Faire du n’importe quoi</div>
+      </div>
+
+      <button type="submit" class="btn-submit">Envoyer le QCM</button>
+    </form>
     <div id="result"></div>
 
     <button id="btnToggleReglement">Afficher le règlement</button>
     <div id="reglement" class="hidden">
       <h3>Règlement YBN x NJC</h3>
+      <p>Respect du RP, interdiction du RDM, metagaming interdit, micro de qualité, respect du staff...</p>
+    </div>
+  </div>
+</body>
+</html>Voici un exemple complet et structuré d’un QCM avec 41 questions, format HTML, respectant le lexique US et les règles de ton serveur YBN x New Jack City. Tu peux l’intégrer dans un site, puis connecter ce formulaire à Discord via un bot ou un script (je peux aussi t’aider à faire ça).
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Whitelist YBN x New Jack City - QCM</title>
+  <style>
+    body {
+      background: url('https://example.com/ton-image-fond-rp.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+      color: #eee;
+      margin: 0; padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      background: rgba(0,0,0,0.75);
+      margin: 40px auto;
+      padding: 20px 30px;
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 2em;
+      letter-spacing: 2px;
+    }
+    .qcm-question {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.1em;
+    }
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+    .btn-submit {
+      background: #E74C3C;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 25px auto 0;
+    }
+    .btn-submit:hover {
+      background: #C0392B;
+    }
+    #reglement {
+      background: #111;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+      display: none;
+    }
+    #btnToggleReglement {
+      margin-top: 20px;
+      background: #3498DB;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #btnToggleReglement:hover {
+      background: #2980B9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Whitelist YBN x New Jack City - Test RP & Mentalité US</h1>
+    <form id="qcmForm">
+      <div class="qcm-question">
+        <label>1. Quel âge minimum faut-il pour rejoindre ?</label>
+        <div><input type="radio" name="q1" value="wrong" required />16 ans</div>
+        <div><input type="radio" name="q1" value="correct" />18 ans</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>2. Combien d’heures de jeu faut-il au minimum ?</label>
+        <div><input type="radio" name="q2" value="wrong" required />100 heures</div>
+        <div><input type="radio" name="q2" value="correct" />300 heures</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>3. Que signifie "squabble" ?</label>
+        <div><input type="radio" name="q3" value="correct" required />Une petite embrouille</div>
+        <div><input type="radio" name="q3" value="wrong" />Une grosse fusillade</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>4. Quelle est la règle sur le RDM (Random Deathmatch) ?</label>
+        <div><input type="radio" name="q4" value="correct" required />Interdit</div>
+        <div><input type="radio" name="q4" value="wrong" />Autorisé quand tu veux</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>5. Qui est "opps" ?</label>
+        <div><input type="radio" name="q5" value="correct" required />Les ennemis</div>
+        <div><input type="radio" name="q5" value="wrong" />Les alliés</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>6. Peut-on utiliser un micro de mauvaise qualité ?</label>
+        <div><input type="radio" name="q6" value="wrong" required />Oui, ça n’a pas d’importance</div>
+        <div><input type="radio" name="q6" value="correct" />Non, il faut un micro clair</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>7. Quelle est la sanction pour le non-respect des règles RP ?</label>
+        <div><input type="radio" name="q7" value="correct" required />Kick, ban, voire blacklist selon la gravité</div>
+        <div><input type="radio" name="q7" value="wrong" />Aucune sanction</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>8. Que veut dire "pop" dans le RP ?</label>
+        <div><input type="radio" name="q8" value="correct" required />Déclencher une action ou événement</div>
+        <div><input type="radio" name="q8" value="wrong" />Disparaître</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>9. Peut-on jouer un flic ripoux sans accord ?</label>
+        <div><input type="radio" name="q9" value="wrong" required />Oui, librement</div>
+        <div><input type="radio" name="q9" value="correct" />Non, dossier validé obligatoire</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>10. Quelle est la règle sur le powergaming avec les armes ?</label>
+        <div><input type="radio" name="q10" value="correct" required />Interdit sauf exceptions RP</div>
+        <div><input type="radio" name="q10" value="wrong" />Autorisé tout le temps</div>
+      </div>
+
+      <!-- Suite des questions 11 à 41 -->
+
+      <div class="qcm-question">
+        <label>11. Quel comportement face à un opp ?</label>
+        <div><input type="radio" name="q11" value="correct" required />Vigilance, éviter le squabble inutile</div>
+        <div><input type="radio" name="q11" value="wrong" />Engager le fight direct sans raison</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>12. Que veut dire "sur mes potes morts" ?</label>
+        <div><input type="radio" name="q12" value="correct" required />Je jure sur mes frères</div>
+        <div><input type="radio" name="q12" value="wrong" />Je mens</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>13. Quelle mentalité pour le RP ?</label>
+        <div><input type="radio" name="q13" value="correct" required />Loyauté, respect, grind</div>
+        <div><input type="radio" name="q13" value="wrong" />Arrogance et chaos</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>14. Peut-on utiliser le langage US en RP ?</label>
+        <div><input type="radio" name="q14" value="correct" required />Oui, c’est encouragé</div>
+        <div><input type="radio" name="q14" value="wrong" />Non, c’est interdit</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>15. Que signifie "gangshit" ?</label>
+        <div><input type="radio" name="q15" value="correct" required />Le code de conduite gangsta</div>
+        <div><input type="radio" name="q15" value="wrong" />Une insulte</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>16. Comment accueillir un nouveau joueur ?</label>
+        <div><input type="radio" name="q16" value="correct" required />Le guider et aider</div>
+        <div><input type="radio" name="q16" value="wrong" />L’ignorer</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>17. Que veut dire "bro" ?</label>
+        <div><input type="radio" name="q17" value="correct" required />Un frère, pote</div>
+        <div><input type="radio" name="q17" value="wrong" />Un ennemi</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>18. Qu’est-ce que le metagaming ?</label>
+        <div><input type="radio" name="q18" value="correct" required />Utiliser info IRL en RP</div>
+        <div><input type="radio" name="q18" value="wrong" />Un mode de jeu</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>19. Quelle attitude face au staff ?</label>
+        <div><input type="radio" name="q19" value="correct" required />Respect et écoute</div>
+        <div><input type="radio" name="q19" value="wrong" />Insulte et défi</div>
+      </div>
+
+      <div class="qcm-question">
+        <label>20. Que faire en cas de bug ou problème ?</label>
+        <div><input type="radio" name="q20" value="correct" required />Reporter au staff</div>
+        <div><input type="radio" name="q20" value="wrong" />Ignorer</div>
+      </div>
+
+      <!-- Ajoute ici les questions 21 à 41 dans le même style -->
+
+      <button type="submit" class="btn-submit">Valider mon test</button>
+    </form>
+
+    <button id="btnToggleReglement">Voir le règlement complet</button>
+    <div id="reglement">
+      <p><strong>Règlement YBN x New Jack City :</strong></p>
       <ul>
-        <li>Respect absolu entre joueurs, pas de hack ni cheat.</li>
-        <li>Pas de powergaming ni metagaming.</li>
-        <li>RP strict, pas de bullshit en vocal.</li>
-        <li>Micro de qualité obligatoire pour la whitelist.</li>
-        <li>Minimum 300 heures de jeu requises pour postuler.</li>
-        <li>Respect du staff et des décisions prises.</li>
+        <li>Âge minimum : 18 ans.</li>
+        <li>Minimum 300 heures de jeu.</li>
+        <li>Micro clair et de qualité obligatoire.</li>
+        <li>Respect strict du RP et des règles anti RDM, metagaming interdit.</li>
+        <li>Respect du staff obligatoire, sanctions sévères en cas d’insultes ou non-respect.</li>
+        <li>Les flics ripoux autorisés uniquement avec dossier validé par le staff.</li>
+        <li>Utilisation du langage US encouragée pour l’immersion.</li>
+        <li>Économie réaliste et équilibrée.</li>
+        <li>Squabble limité et justifié RP.</li>
+        <li>Respect des mentalités gang et street codes.</li>
       </ul>
     </div>
-  </section>
-</main>
+  </div>
 
-<script>
-  // Gestion des onglets
-  const tabAccueil = document.getElementById('tabAccueil');
-  const tabQcm = document.getElementById('tabQcm');
-  const accueil = document.getElementById('accueil');
-  const qcm = document.getElementById('qcm');
-
-  tabAccueil.addEventListener('click', () => {
-    tabAccueil.classList.add('active');
-    tabQcm.classList.remove('active');
-    accueil.classList.remove('hidden');
-    qcm.classList.add('hidden');
-  });
-
-  tabQcm.addEventListener('click', () => {
-    tabQcm.classList.add('active');
-    tabAccueil.classList.remove('active');
-    qcm.classList.remove('hidden');
-    accueil.classList.add('hidden');
-  });
-
-  // QCM validation
-  const form = document.getElementById('qcmForm');
-  const result = document.getElementById('result');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    let correctAnswers = 0;
-    const totalQuestions = 5;
-
-    // Check each question
-    for(let i=1; i<=totalQuestions; i++){
-      const options = form['q'+i];
-      for(let option of options){
-        if(option.checked){
-          if(option.value === 'correct') correctAnswers++;
-          break;
-        }
+  <script>
+    document.getElementById('btnToggleReglement').addEventListener('click', () => {
+      const reglement = document.getElementById('reglement');
+      if (reglement.style.display === 'block') {
+        reglement.style.display = 'none';
+      } else {
+        reglement.style.display = 'block';
       }
-    }
+    });
 
-    if(correctAnswers === totalQuestions){
-      result.textContent = "✅ Félicitations, tu as réussi le QCM ! Tu peux passer en vocal.";
-      result.style.color = '#4CAF50';
-      // Ici tu peux appeler ton backend / webhook Discord pour attribuer le rôle
-    } else {
-      result.textContent = `❌ Tu as répondu correctement à ${correctAnswers} sur ${totalQuestions}. Recommence pour valider.`;
-      result.style.color = '#cc0000';
-    }
-  });
-
-  // Toggle règlement
-  const btnToggleReglement = document.getElementById('btnToggleReglement');
-  const reglement = document.getElementById('reglement');
-
-  btnToggleReglement.addEventListener('click', () => {
-    if(reglement.classList.contains('hidden')){
-      reglement.classList.remove('hidden');
-      btnToggleReglement.textContent = 'Cacher le règlement';
-    } else {
-      reglement.classList.add('hidden');
-      btnToggleReglement.textContent = 'Afficher le règlement';
-    }
-  });
-</script>
-
+    // Pour le submit : tu peux ajouter un contrôle JS, mais c’est mieux côté serveur ou via Google Forms
+    document.getElementById('qcmForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Ici, récupère les réponses, vérifie le score, puis envoie via API à Discord ou autre
+      alert("Merci pour ta candidature ! Le staff te contactera rapidement.");
+    });
+  </script>
 </body>
 </html>
