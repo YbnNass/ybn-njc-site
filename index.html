@@ -15,206 +15,216 @@
     }
 
     header {
-      position: relative;
-      text-align: center;
-      padding: 60px 20px 30px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #0e0e0e;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #333;
+      z-index: 1000;
+    }
+
+    .left-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
 
     header img {
-      width: 130px;
+      width: 60px;
       height: auto;
-      margin-bottom: 20px;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: #f5c518;
-    }
-
-    /* Boutons connexion / déconnexion */
-    #discord-connect, #discord-disconnect {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #5865F2; /* bleu Discord */
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 10px 20px;
-      border-radius: 30px;
-      text-decoration: none;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-      user-select: none;
-      display: inline-block;
-      border: none;
     }
 
-    #discord-connect:hover, #discord-disconnect:hover {
-      background-color: #4752c4;
-      transform: scale(1.05);
+    nav {
+      display: flex;
+      gap: 25px;
     }
 
-    #user-info {
-      position: fixed;
-      top: 60px;
-      right: 20px;
+    nav a {
       color: #5FAF9B;
       font-weight: 700;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 8px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    nav a.active, nav a:hover {
+      background-color: #5FAF9B;
+      color: #0e0e0e;
+    }
+
+    .discord-button {
+      background-color: #f5c518;
+      color: #000;
+      font-weight: 700;
       font-size: 1rem;
-      user-select: none;
+      padding: 8px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
       white-space: nowrap;
+    }
+
+    .discord-button:hover {
+      background-color: #ffdd33;
+      transform: scale(1.05);
     }
 
     main {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 110px auto 40px;
       padding: 0 20px;
     }
 
-    main h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      font-weight: 700;
-      color: #5FAF9B !important; /* vert */
-      user-select: none;
+    section {
+      display: none;
+      color: #5FAF9B;
     }
 
-    main p {
+    section.active {
+      display: block;
+    }
+
+    h1, h2 {
+      color: #5FAF9B;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 15px;
+    }
+
+    p {
       font-size: 1.1rem;
-      line-height: 1.7;
-      color: #5FAF9B !important; /* vert */
-      user-select: text;
+      line-height: 1.6;
+      max-width: 700px;
+      margin-bottom: 25px;
+    }
+
+    .form-button {
+      background-color: #f5c518;
+      color: #000;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .form-button:hover {
+      background-color: #ffdd33;
+      transform: scale(1.05);
     }
 
     @media (max-width: 480px) {
-      header h1 {
+      nav {
+        gap: 15px;
+      }
+
+      nav a {
+        font-size: 1rem;
+        padding: 6px 8px;
+      }
+
+      .discord-button {
+        font-size: 0.9rem;
+        padding: 6px 15px;
+      }
+
+      h1 {
         font-size: 1.8rem;
       }
 
-      #discord-connect, #discord-disconnect {
-        font-size: 0.9rem;
-        padding: 8px 15px;
-        top: 15px;
-        right: 15px;
-      }
-
-      #user-info {
-        top: 50px;
-        right: 15px;
-        font-size: 0.9rem;
+      h2 {
+        font-size: 1.6rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City" />
-    <h1>YBN : New Jack City 🗽</h1>
-  </header>
 
-  <!-- Bouton connexion Discord -->
-  <button id="discord-connect">Se connecter avec Discord</button>
+<header>
+  <div class="left-header">
+    <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City" id="logo" />
+    <nav>
+      <a href="#" class="active" data-section="accueil">Accueil</a>
+      <a href="#" data-section="whitelist">Whitelist</a>
+    </nav>
+  </div>
+  <a href="https://discord.gg/tonliendiscord" target="_blank" class="discord-button">Rejoins notre Discord</a>
+</header>
 
-  <!-- Bouton déconnexion Discord, caché par défaut -->
-  <button id="discord-disconnect" style="display:none;">Se déconnecter</button>
-
-  <!-- Affichage du pseudo Discord connecté -->
-  <div id="user-info" style="display:none;"></div>
-
-  <main>
-    <h2>Présentation</h2>
+<main>
+  <section id="accueil" class="active">
+    <h1><span style="color: #5FAF9B;">YBN</span> x New Jack City 🗽</h1>
     <p>
       Bienvenue sur le site officiel de YBN : New Jack City. Serveur GTA RP inspiré de la street US, ambiance réaliste, personnages profonds et scènes sérieuses garanties.  
       Rejoins une communauté mature, avec des systèmes propres, une économie réaliste et une immersion totale dans le monde du RP.
     </p>
-  </main>
+  </section>
 
-  <script>
-    // Config - remplace par ton client ID et redirect URI exact
-    const clientId = "1375199865566531725";
-    const redirectUri = "https://ybnnass.github.io/ybn-njc-site/";
-    const scope = "identify";
-    const authUrl = `https://discord.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=token&scope=${scope}`;
+  <section id="whitelist">
+    <h2>Whitelist 🗽</h2>
+    <p>
+      Nous sommes un serveur Mentalité US basé sur l'immersion totale.  
+      Pour garantir la meilleure expérience RP possible, la whitelist est obligatoire.  
+      Prends le temps de remplir le formulaire avec sérieux pour faire partie de la communauté.
+    </p>
+    <a href="https://tonlienformulaire.com" target="_blank" class="form-button">Formulaire Whitelist</a>
+  </section>
+</main>
 
-    // Elements du DOM
-    const btnConnect = document.getElementById("discord-connect");
-    const btnDisconnect = document.getElementById("discord-disconnect");
-    const userInfo = document.getElementById("user-info");
+<script>
+  const links = document.querySelectorAll('nav a');
+  const sections = document.querySelectorAll('main section');
 
-    // Fonction pour parser le hash de l'URL (token)
-    function getTokenFromHash() {
-      const hash = window.location.hash.substring(1);
-      const params = new URLSearchParams(hash);
-      return params.get("access_token");
-    }
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.getAttribute('data-section');
 
-    // Fonction pour récupérer l'info user Discord avec token
-    async function fetchDiscordUser(token) {
-      try {
-        const res = await fetch("https://discord.com/api/users/@me", {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-        if (!res.ok) throw new Error("Token invalide");
-        return await res.json();
-      } catch (err) {
-        console.error(err);
-        return null;
-      }
-    }
+      // Toggle active class on nav links
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
 
-    // Afficher l'interface selon l'état connecté ou non
-    async function updateUI() {
-      const token = localStorage.getItem("discord_token") || getTokenFromHash();
-
-      if (token) {
-        // Stocke le token en localstorage pour garder la session
-        if (!localStorage.getItem("discord_token")) {
-          localStorage.setItem("discord_token", token);
-          // Nettoyer le hash pour éviter d'exposer le token dans l'URL
-          history.replaceState(null, null, " ");
-        }
-
-        const user = await fetchDiscordUser(token);
-        if (user) {
-          // Affiche pseudo et boutons
-          userInfo.textContent = `Connecté : ${user.username}#${user.discriminator}`;
-          userInfo.style.display = "block";
-          btnConnect.style.display = "none";
-          btnDisconnect.style.display = "inline-block";
-          return;
+      // Show/hide sections
+      sections.forEach(sec => {
+        if (sec.id === target) {
+          sec.classList.add('active');
         } else {
-          // Token invalide -> clear storage
-          localStorage.removeItem("discord_token");
+          sec.classList.remove('active');
         }
-      }
-
-      // Par défaut : non connecté
-      userInfo.style.display = "none";
-      btnConnect.style.display = "inline-block";
-      btnDisconnect.style.display = "none";
-    }
-
-    // Bouton connexion
-    btnConnect.addEventListener("click", () => {
-      window.location.href = authUrl;
+      });
     });
+  });
 
-    // Bouton déconnexion
-    btnDisconnect.addEventListener("click", () => {
-      localStorage.removeItem("discord_token");
-      userInfo.style.display = "none";
-      btnDisconnect.style.display = "none";
-      btnConnect.style.display = "inline-block";
-      alert("Déconnecté de Discord");
+  // Optional : click logo to go accueil
+  document.getElementById('logo').addEventListener('click', () => {
+    links.forEach(l => l.classList.remove('active'));
+    links[0].classList.add('active');
+    sections.forEach(sec => {
+      if (sec.id === 'accueil') sec.classList.add('active');
+      else sec.classList.remove('active');
     });
+  });
+</script>
 
-    // Au chargement, update UI
-    window.addEventListener("load", updateUI);
-  </script>
 </body>
 </html>
