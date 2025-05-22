@@ -4,32 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Accueil YBN x New Jack City</title>
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       background-color: #000; /* noir */
-      color: #FFD700; /* couleur générale jaune doré */
-      font-family: 'Permanent Marker', cursive;
+      color: #FFC107; /* jaune */
+      font-family: 'Montserrat', sans-serif;
       height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
     header {
-      padding: 20px 40px;
-      color: #FFC107; /* jaune plus doux/orangé pour le titre */
-      font-size: 3.5rem;
-      text-shadow: 2px 2px 4px #222;
-      user-select: none;
+      padding: 30px 40px;
       display: flex;
+      flex-direction: column;
       align-items: center;
+      user-select: none;
       gap: 15px;
+      border-bottom: 2px solid #FFC107;
     }
 
     header img {
       height: 100px;
       width: auto;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #FFC107;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     main {
@@ -40,33 +50,34 @@
     }
 
     .discord-button {
-      background-color: #FFD700;
+      background-color: #FFC107;
       color: #000;
       border: none;
-      padding: 1rem 2rem;
-      font-size: 1.5rem;
+      padding: 1rem 2.5rem;
+      font-size: 1.3rem;
       cursor: pointer;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #FFD700;
-      transition: background-color 0.3s, color 0.3s;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #FFC107;
+      font-weight: 700;
       text-decoration: none;
-      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .discord-button:hover {
-      background-color: #e6c200;
+      background-color: #e6b800;
       color: #111;
-      box-shadow: 0 0 15px #e6c200;
+      box-shadow: 0 0 20px #e6b800;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://i.ibb.co/v6T1g5d2/logo.png" alt="Logo YBN New Jack City" />
-    <span>YBN : New Jack City 🗽</span>
+    <img src="https://i.ibb.co/3sxqZLk/LOGO-NJC-1.png" alt="Logo YBN New Jack City" />
+    <h1>YBN : New Jack City <span>🗽</span></h1>
+    <a href="https://discord.gg/tonliendiscord" target="_blank" class="discord-button">Rejoins notre Discord</a>
   </header>
   <main>
-    <a href="https://discord.gg/tonliendiscord" target="_blank" class="discord-button">Rejoins notre Discord</a>
+    <!-- contenu futur -->
   </main>
 </body>
 </html>
