@@ -1,144 +1,113 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>YBN - New Jack City</title>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
-<style>
-  body {
-    margin: 0;
-    font-family: 'Oswald', sans-serif;
-    background: url('https://i.imgur.com/fG6yShH.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #f1f1f1;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  header {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px 40px;
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border-bottom: 3px solid #c62828;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-  }
-  header img {
-    height: 50px;
-    width: auto;
-  }
-  main {
-    flex: 1;
-    background-color: rgba(0,0,0,0.85);
-    margin: 30px auto;
-    max-width: 900px;
-    border-radius: 12px;
-    padding: 40px 50px;
-    box-shadow: 0 0 25px #c62828;
-    line-height: 1.7;
-  }
-  main h2 {
-    font-size: 2.5rem;
-    margin-bottom: 25px;
-    color: #e53935;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-  main p {
-    font-size: 1.3rem;
-    color: #ddd;
-    text-align: justify;
-  }
-  a.form-link {
-    display: block;
-    margin: 35px auto 0;
-    max-width: 420px;
-    padding: 18px 25px;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.6rem;
-    text-decoration: none;
-    color: #fff;
-    background: #c62828;
-    border-radius: 10px;
-    transition: background 0.3s ease;
-  }
-  a.form-link:hover {
-    background: #b71c1c;
-  }
-  footer {
-    background-color: rgba(0, 0, 0, 0.9);
-    text-align: center;
-    padding: 20px 10px;
-    font-size: 1.1rem;
-    letter-spacing: 0.05em;
-    color: #eee;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    header {
-      font-size: 2rem;
-      padding: 15px 20px;
-      flex-direction: column;
-      gap: 10px;
-    }
-    main {
-      padding: 25px 20px;
-      margin: 20px 10px;
-    }
-    main h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-    }
-    main p {
-      font-size: 1.1rem;
-    }
-    a.form-link {
-      font-size: 1.3rem;
-      padding: 15px 20px;
-      max-width: 90%;
-    }
-    footer {
-      font-size: 1rem;
-      padding: 15px 10px;
-    }
-  }
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YBN - New Jack City</title>
+    <style>
+        /* Reset basique */
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            font-family: 'Arial Black', Arial, sans-serif;
+            background: url('https://i.imgur.com/eXCSd4r.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 0 0 8px #000;
+            padding: 20px;
+        }
+        header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        header img {
+            width: 150px;
+            height: auto;
+        }
+        main {
+            max-width: 700px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 15px;
+            padding: 30px 40px;
+            text-align: center;
+            box-shadow: 0 0 25px #00ff99aa;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            color: #00ff99;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-weight: 600;
+            color: #ccc;
+        }
+        a.form-link {
+            display: inline-block;
+            text-decoration: none;
+            background: #00ff99;
+            color: #000;
+            font-weight: 700;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            box-shadow: 0 0 20px #00ff99bb;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        a.form-link:hover {
+            background: #00cc77;
+            color: #fff;
+            box-shadow: 0 0 30px #00cc77dd;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #666;
+            text-shadow: none;
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 20px;
+                max-width: 90vw;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            a.form-link {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-  <img src="https://i.imgur.com/EsEj7wq.png" alt="YBN Logo" />
-  YBN - New Jack City
-</header>
-<main>
-  <h2>Wassup Bro, bienvenue sur YBN x NJC</h2>
-  <p>
-    Ici, c’est l’univers RP à mentalité US. Le vrai game, pas de place pour les touristes.  
-    Respect strict des règles, authenticité et immersion au cœur de notre city.  
-    Pour passer sur le vocal, tu dois d’abord remplir ce QCM.  
-    C’est la première étape pour prouver que t’es un vrai, que tu connais le code, le grind, la street.  
-    On est là pour construire une communauté solide, pas juste du chiffre.  
-    Sur mes potes morts, tu veux la place ?  
-    Alors fais tes preuves et montre que t’es clean, focus, et ready pour le gangshit.
-  </p>
-  <a
-    href="https://docs.google.com/forms/d/e/TON_LIEN_GOOGLE_FORM/viewform?usp=sf_link"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="form-link"
-  >Remplir le QCM Whitelist</a>
-</main>
-<footer>
-  © 2025 YBN x New Jack City — Mentalité US, RP authentique, respect et grind. Sur mes potes morts.
-</footer>
+    <header>
+        <img src="https://i.imgur.com/wwR4pA3.png" alt="Logo YBN New Jack City" />
+    </header>
+    <main>
+        <h1>YBN - New Jack City</h1>
+        <p>
+            Wassup Bro, bienvenue sur <strong>YBN x NJC</strong>.<br />
+            Voici le QCM à remplir avant de passer sur le vocal.<br />
+            Le test est obligatoire pour garder l'ambiance RP et mentalité US.<br /><br />
+            Prends ton temps, lis bien, et montre que t’es ready pour l’aventure.
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSftBIP7k03x1KxxcTNPqH6mZQOZh_JnKzY5lOdp1Cq2O9kn0kQ/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer" class="form-link">
+            Remplir le QCM Whitelist
+        </a>
+    </main>
+    <footer>
+        &copy; 2025 YBN x New Jack City - Tous droits réservés
+    </footer>
 </body>
 </html>
