@@ -41,6 +41,7 @@
       border-radius: 30px;
       text-decoration: none;
       transition: background 0.3s ease, transform 0.2s ease;
+      display: inline-block;
     }
 
     .discord-button:hover {
@@ -82,7 +83,9 @@
   <header>
     <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City" />
     <h1>YBN : New Jack City 🗽</h1>
-    <a href="https://discord.gg/tonliendiscord" target="_blank" class="discord-button">Rejoins notre Discord</a>
+    <a href="https://discord.com/oauth2/authorize?client_id=TON_CLIENT_ID&redirect_uri=https%3A%2F%2Fybnnass.github.io%2Fybn-njc-site%2F&response_type=token&scope=identify" class="discord-button">
+      Se connecter avec Discord
+    </a>
   </header>
   <main>
     <h2>Présentation</h2>
@@ -91,5 +94,38 @@
       Rejoins une communauté mature, avec des systèmes propres, une économie réaliste et une immersion totale dans le monde du RP.
     </p>
   </main>
+
+  <script>
+    window.onload = function () {
+      const hash = window.location.hash;
+      if (hash && hash.includes('access_token')) {
+        const accessToken = hash.match(/access_token=([^&]*)/)[1];
+
+        fetch('https://discord.com/api/users/@me', {
+          headers: {
+            Authorization: 'Bearer ' + accessToken
+          }
+        })
+        .then(response => response.json())
+        .then(data => {
+          const username = data.username + '#' + data.discriminator;
+          const userDisplay = document.createElement('div');
+          userDisplay.textContent = `Connecté en tant que ${username}`;
+          userDisplay.style.color = '#f5c518';
+          userDisplay.style.fontWeight = '700';
+          userDisplay.style.textAlign = 'center';
+          userDisplay.style.marginTop = '15px';
+
+          const header = document.querySelector('header');
+          header.appendChild(userDisplay);
+
+          // Masquer le bouton connexion après connexion
+          const btn = document.querySelector('.discord-button');
+          if (btn) btn.style.display = 'none';
+        })
+        .catch(err => console.error('Erreur Discord API:', err));
+      }
+    };
+  </script>
 </body>
 </html>
