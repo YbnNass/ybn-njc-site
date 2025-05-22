@@ -5,121 +5,142 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>YBN - New Jack City</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
   body {
-    margin: 0; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #111;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    background: url('https://i.imgur.com/4DT4BAy.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #fff;
   }
   header {
-    background: #0f0f0f;
-    padding: 15px 30px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    background: rgba(0,0,0,0.8);
+    padding: 10px 20px;
+    border-bottom: 2px solid #cc0000;
   }
   header img {
-    height: 40px;
+    height: 50px;
+    margin-right: 15px;
+  }
+  header h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #cc0000;
   }
   nav {
-    margin-left: auto;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
   }
   nav button {
     background: transparent;
     border: none;
+    padding: 15px 30px;
     color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    margin-left: 20px;
+    font-size: 18px;
     cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border-bottom: 3px solid transparent;
+    font-weight: bold;
   }
-  nav button.active, nav button:hover {
-    background: #e50914;
+  nav button:hover,
+  nav button.active {
+    background: #cc0000;
+    border-bottom: 3px solid #fff;
   }
-
   main {
-    min-height: 80vh;
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(0,0,0,0.75);
+    padding: 30px 40px;
+    border-radius: 8px;
+  }
+  .hidden {
+    display: none;
   }
 
   /* Accueil */
-  #home {
-    background: url('file:///C:/Users/iamna/Pictures/logonjcybn.png') no-repeat center center/cover;
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-    text-shadow: 0 0 6px #000;
+  #accueil h2 {
+    color: #cc0000;
+    font-size: 28px;
+    margin-bottom: 20px;
   }
-  #home h1 {
-    font-size: 3rem;
-    margin-bottom: 0.3em;
-  }
-  #home p {
-    font-size: 1.3rem;
-    max-width: 700px;
-    margin: 0 auto;
+  #accueil p {
+    font-size: 18px;
     line-height: 1.5;
   }
 
-  /* Whitelist / QCM */
-  #whitelist {
-    padding: 30px 20px;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  #whitelist h2 {
-    text-align: center;
-    margin-bottom: 1em;
-  }
+  /* QCM */
   form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
   }
-  label {
+  form label {
+    margin: 15px 0 8px;
     font-weight: bold;
+    font-size: 16px;
   }
-  input[type="text"], select {
+  form select, form input[type="text"], form input[type="email"], form input[type="number"] {
     padding: 8px;
-    font-size: 1rem;
+    font-size: 16px;
     border-radius: 4px;
-    border: 1px solid #444;
+    border: none;
   }
-  .question {
-    margin-bottom: 15px;
+  .qcm-question {
+    margin-bottom: 20px;
   }
-  .answers {
-    margin-top: 5px;
+  .qcm-question input[type="radio"] {
+    margin-right: 8px;
   }
-  .answers label {
-    font-weight: normal;
-    display: block;
-    margin-bottom: 5px;
-    cursor: pointer;
-  }
-  button[type="submit"] {
-    background: #e50914;
+  .btn-submit {
+    background: #cc0000;
     border: none;
     color: white;
     font-weight: bold;
-    padding: 12px;
+    padding: 12px 0;
+    font-size: 18px;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1.1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
   }
-  button[type="submit"]:hover {
-    background: #b00610;
+  .btn-submit:hover {
+    background: #a30000;
   }
+
+  /* Résultat */
   #result {
     margin-top: 20px;
-    font-size: 1.3rem;
+    font-size: 20px;
     font-weight: bold;
-    color: #0f0;
-    text-align: center;
+    color: #cc0000;
+  }
+
+  /* Règlement */
+  #reglement {
+    margin-top: 30px;
+    background: #111;
+    padding: 20px;
+    border-radius: 6px;
+    max-height: 300px;
+    overflow-y: auto;
+    color: #eee;
+  }
+  #btnToggleReglement {
+    background: transparent;
+    border: 2px solid #cc0000;
+    color: #cc0000;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  #btnToggleReglement:hover {
+    background: #cc0000;
+    color: #fff;
   }
 
 </style>
@@ -127,336 +148,145 @@
 <body>
 
 <header>
-  <img src="https://i.imgur.com/yourLogo.png" alt="YBN - New Jack City Logo" />
-  <nav>
-    <button class="active" onclick="showTab('home')">Accueil</button>
-    <button onclick="showTab('whitelist')">Whitelist</button>
-  </nav>
+  <img src="https://i.imgur.com/n4wl61Q.png" alt="YBN - New Jack City Logo" />
+  <h1>YBN - New Jack City</h1>
 </header>
 
+<nav>
+  <button id="tabAccueil" class="active">Accueil</button>
+  <button id="tabQcm">QCM</button>
+</nav>
+
 <main>
-  <section id="home">
-    <h1>YBN - New Jack City</h1>
+  <section id="accueil">
+    <h2>Wassup Bro, bienvenue sur YBN x NJC</h2>
     <p>
-      Wassup Bro, bienvenue sur YBN x NJC. Ici c’est le vrai univers RP mentalité US, 
-      on joue hardcore, on respecte les codes, et on fait pas dans la demi-mesure. 
-      Prépare-toi à vivre une expérience immersive, intense, avec ta team, dans la street ou côté flic. 
-      Pas de place pour les noobs, que du vrai, sur mes potes morts.
+      Ici, c’est l’univers du RP avec une mentalité US authentique.  
+      Respect, grind, et loyauté sont les clés pour s'imposer.  
+      Remplis le QCM dans l’onglet QCM avant de passer vocal, montre que t’es solide, on veut du vrai.  
+      <br/><br/>
+      Let's keep it 100, squad tight, no opps allowed.
     </p>
   </section>
 
-  <section id="whitelist" style="display:none;">
-    <h2>Formulaire Whitelist - QCM</h2>
+  <section id="qcm" class="hidden">
+    <h2>QCM de Whitelist</h2>
     <form id="qcmForm">
-
-      <!-- Question 1 exemple -->
-      <div class="question">
-        <label>1. Quelle est la règle d’or du RP sur YBN ?</label>
-        <div class="answers">
-          <label><input type="radio" name="q1" value="a" required> a) Toujours respecter le lore du serveur</label>
-          <label><input type="radio" name="q1" value="b"> b) Tuer tout le monde sans raison</label>
-          <label><input type="radio" name="q1" value="c"> c) Faire du OOC en pleine scène RP</label>
-          <label><input type="radio" name="q1" value="d"> d) Ignorer les autres joueurs</label>
-        </div>
+      <!-- Exemple de question 1 -->
+      <div class="qcm-question">
+        <label>1. Quel est le comportement attendu en RP sur YBN x NJC ?</label>
+        <div><input type="radio" name="q1" value="correct" /> Respecter le RP et la mentalité US</div>
+        <div><input type="radio" name="q1" value="wrong" /> Faire n'importe quoi, no limit</div>
+      </div>
+      <!-- Question 2 -->
+      <div class="qcm-question">
+        <label>2. Peut-on faire du powergaming sur le serveur ?</label>
+        <div><input type="radio" name="q2" value="wrong" /> Oui, dès que tu veux</div>
+        <div><input type="radio" name="q2" value="correct" /> Non, c’est interdit</div>
+      </div>
+      <!-- Question 3 -->
+      <div class="qcm-question">
+        <label>3. Combien d'heures minimum faut-il pour postuler ?</label>
+        <div><input type="radio" name="q3" value="correct" /> 300 heures</div>
+        <div><input type="radio" name="q3" value="wrong" /> 100 heures</div>
+      </div>
+      <!-- Question 4 -->
+      <div class="qcm-question">
+        <label>4. Quel rôle le staff joue-t-il dans le RP ?</label>
+        <div><input type="radio" name="q4" value="correct" /> Faire respecter les règles et assurer l'immersion</div>
+        <div><input type="radio" name="q4" value="wrong" /> Faire n'importe quoi sans sanction</div>
+      </div>
+      <!-- Question 5 -->
+      <div class="qcm-question">
+        <label>5. Que signifie "side" dans le vocabulaire US RP ?</label>
+        <div><input type="radio" name="q5" value="correct" /> Ne pas prendre parti dans une embrouille</div>
+        <div><input type="radio" name="q5" value="wrong" /> Être l’ennemi</div>
       </div>
 
-      <!-- Ajoute ici toutes les questions (exemple seulement la 1 ici, je te remets les 41 après) -->
-
-      <button type="submit">Envoyer</button>
+      <button type="submit" class="btn-submit">Valider</button>
     </form>
+
     <div id="result"></div>
+
+    <button id="btnToggleReglement">Afficher le règlement</button>
+    <div id="reglement" class="hidden">
+      <h3>Règlement YBN x NJC</h3>
+      <ul>
+        <li>Respect absolu entre joueurs, pas de hack ni cheat.</li>
+        <li>Pas de powergaming ni metagaming.</li>
+        <li>RP strict, pas de bullshit en vocal.</li>
+        <li>Micro de qualité obligatoire pour la whitelist.</li>
+        <li>Minimum 300 heures de jeu requises pour postuler.</li>
+        <li>Respect du staff et des décisions prises.</li>
+      </ul>
+    </div>
   </section>
 </main>
 
 <script>
-  // Gestion onglets
-  function showTab(tab) {
-    document.getElementById('home').style.display = tab === 'home' ? 'flex' : 'none';
-    document.getElementById('whitelist').style.display = tab === 'whitelist' ? 'block' : 'none';
+  // Gestion des onglets
+  const tabAccueil = document.getElementById('tabAccueil');
+  const tabQcm = document.getElementById('tabQcm');
+  const accueil = document.getElementById('accueil');
+  const qcm = document.getElementById('qcm');
 
-    // Active le bouton
-    document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-  }
+  tabAccueil.addEventListener('click', () => {
+    tabAccueil.classList.add('active');
+    tabQcm.classList.remove('active');
+    accueil.classList.remove('hidden');
+    qcm.classList.add('hidden');
+  });
 
-  // QCM - vérification simple  
-  const correctAnswers = {
-    q1: 'a',
-    // q2: '...', ... ajoute ici toutes les bonnes réponses
-  };
+  tabQcm.addEventListener('click', () => {
+    tabQcm.classList.add('active');
+    tabAccueil.classList.remove('active');
+    qcm.classList.remove('hidden');
+    accueil.classList.add('hidden');
+  });
 
+  // QCM validation
   const form = document.getElementById('qcmForm');
-  const resultDiv = document.getElementById('result');
-
+  const result = document.getElementById('result');
   form.addEventListener('submit', e => {
     e.preventDefault();
-    let score = 0;
-    let total = Object.keys(correctAnswers).length;
+    let correctAnswers = 0;
+    const totalQuestions = 5;
 
-    for(let key in correctAnswers){
-      let answer = form.elements[key]?.value;
-      if(answer === correctAnswers[key]) score++;
+    // Check each question
+    for(let i=1; i<=totalQuestions; i++){
+      const options = form['q'+i];
+      for(let option of options){
+        if(option.checked){
+          if(option.value === 'correct') correctAnswers++;
+          break;
+        }
+      }
     }
 
-    if(score === total){
-      resultDiv.style.color = '#0f0';
-      resultDiv.textContent = `GG Bro, t’as réussi le QCM avec ${score}/${total}, bienvenue sur YBN x NJC !`;
-      // Ici tu peux ajouter l'appel à l'API Discord pour donner le rôle automatiquement (en back)
+    if(correctAnswers === totalQuestions){
+      result.textContent = "✅ Félicitations, tu as réussi le QCM ! Tu peux passer en vocal.";
+      result.style.color = '#4CAF50';
+      // Ici tu peux appeler ton backend / webhook Discord pour attribuer le rôle
     } else {
-      resultDiv.style.color = '#f00';
-      resultDiv.textContent = `T’as eu ${score}/${total}, retente ta chance et apprends bien les règles !`;
+      result.textContent = `❌ Tu as répondu correctement à ${correctAnswers} sur ${totalQuestions}. Recommence pour valider.`;
+      result.style.color = '#cc0000';
+    }
+  });
+
+  // Toggle règlement
+  const btnToggleReglement = document.getElementById('btnToggleReglement');
+  const reglement = document.getElementById('reglement');
+
+  btnToggleReglement.addEventListener('click', () => {
+    if(reglement.classList.contains('hidden')){
+      reglement.classList.remove('hidden');
+      btnToggleReglement.textContent = 'Cacher le règlement';
+    } else {
+      reglement.classList.add('hidden');
+      btnToggleReglement.textContent = 'Afficher le règlement';
     }
   });
 </script>
 
-</body>
-</html>
-
-
-  // Questions du QCM (41 questions)
-  const questions = [
-    {
-      question: "1. Quelle est la règle principale du RP sur New Jack City ?",
-      answers: ["Respecter la mentalité US", "Faire n'importe quoi", "Jouer sans casque", "Utiliser les cheats"],
-      correct: 0
-    },
-    {
-      question: "2. Que signifie 'opps' en langage RP US ?",
-      answers: ["Ennemis", "Amis", "Policiers", "Voitures"],
-      correct: 0
-    },
-    {
-      question: "3. Quelle est la limite d’âge pour rejoindre le serveur ?",
-      answers: ["18 ans", "21 ans", "16 ans", "20 ans"],
-      correct: 0
-    },
-    {
-      question: "4. Que doit-on faire en cas de problème avec un autre joueur ?",
-      answers: ["Faire un rapport au staff", "Répondre par la violence", "Ignorer", "Abandonner le serveur"],
-      correct: 0
-    },
-    {
-      question: "5. Qu’est-ce qu’un 'side' dans le RP US ?",
-      answers: ["Un camp/équipe", "Une arme", "Un véhicule", "Un bâtiment"],
-      correct: 0
-    },
-    {
-      question: "6. Quelle est la durée minimale de RP pour être validé ?",
-      answers: ["30 minutes", "10 minutes", "5 minutes", "1 heure"],
-      correct: 0
-    },
-    {
-      question: "7. Que signifie 'pop' dans le jargon US ?",
-      answers: ["Apparaître soudainement", "Parler fort", "Partir", "Prendre une arme"],
-      correct: 0
-    },
-    {
-      question: "8. Que faire si un joueur triche ?",
-      answers: ["Signaler au staff", "Ne rien faire", "Rejoindre-le", "Utiliser aussi la triche"],
-      correct: 0
-    },
-    {
-      question: "9. Qu’est-ce que le 'gangshit' ?",
-      answers: ["Activité de gang", "Cuisine", "Course de voitures", "Dialogue RP"],
-      correct: 0
-    },
-    {
-      question: "10. Quelle attitude est exigée pour le RP ?",
-      answers: ["Respect et sérieux", "Troll et insultes", "Silence complet", "Pas d’interactions"],
-      correct: 0
-    },
-    {
-      question: "11. Qu’est-ce que le 'sur mes potes morts' ?",
-      answers: ["Promesse sérieuse", "Blague", "Insulte", "Nom de véhicule"],
-      correct: 0
-    },
-    {
-      question: "12. Que signifie 'for real' ?",
-      answers: ["Pour de vrai", "Pour rigoler", "Jamais", "Tout le temps"],
-      correct: 0
-    },
-    {
-      question: "13. Que fait un 'ripoux' ?",
-      answers: ["Flic corrompu", "Héros", "Témoin", "Civile"],
-      correct: 0
-    },
-    {
-      question: "14. Quel est l’intérêt de l’économie réaliste ?",
-      answers: ["Immersion", "Tricher", "Rapidité", "Aucun"],
-      correct: 0
-    },
-    {
-      question: "15. Qu’est-ce qu’un 'plug' ?",
-      answers: ["Fournisseur", "Véhicule", "Personnage", "Lieu"],
-      correct: 0
-    },
-    {
-      question: "16. Que veut dire 'squabble' ?",
-      answers: ["Dispute", "Course", "Chasse", "Fête"],
-      correct: 0
-    },
-    {
-      question: "17. Que doit contenir un bon micro ?",
-      answers: ["Bonne qualité", "Bruitage", "Silence total", "Écho"],
-      correct: 0
-    },
-    {
-      question: "18. Combien d’heures de jeu minimum pour s’inscrire ?",
-      answers: ["300h", "100h", "50h", "10h"],
-      correct: 0
-    },
-    {
-      question: "19. Qu’est-ce qu’un 'gang' ?",
-      answers: ["Groupe organisé", "Voiture", "Arme", "RP solo"],
-      correct: 0
-    },
-    {
-      question: "20. Que signifie 'bro' ?",
-      answers: ["Frère/ami", "Rival", "Flic", "Civil"],
-      correct: 0
-    },
-    {
-      question: "21. Qu’est-ce que 'mentalité US' ?",
-      answers: ["Style de jeu réaliste", "Triche", "Troll", "Pas de RP"],
-      correct: 0
-    },
-    {
-      question: "22. Quel comportement est interdit ?",
-      answers: ["Cheater", "Respect", "Patience", "Coopération"],
-      correct: 0
-    },
-    {
-      question: "23. Qu’est-ce qu’un 'badie' ?",
-      answers: ["Fille badass", "Voiture", "Arme", "Serveur"],
-      correct: 0
-    },
-    {
-      question: "24. Que signifie 'side' en contexte gang ?",
-      answers: ["Camp allié", "Camp ennemi", "Terrain neutre", "Maison"],
-      correct: 0
-    },
-    {
-      question: "25. Comment appeler un policier corrompu ?",
-      answers: ["Ripoux", "Flic", "Civil", "Témoin"],
-      correct: 0
-    },
-    {
-      question: "26. Quel est le but du RP ?",
-      answers: ["Créer une histoire", "Tricher", "Tuer sans raison", "Ignorer les autres"],
-      correct: 0
-    },
-    {
-      question: "27. Que faire si tu vois un cheater ?",
-      answers: ["Signaler", "Rejoindre", "Ignorer", "Suivre"],
-      correct: 0
-    },
-    {
-      question: "28. Que veut dire 'pop' en RP ?",
-      answers: ["Apparition soudaine", "Discussion", "Course", "Fête"],
-      correct: 0
-    },
-    {
-      question: "29. Quelle est la bonne attitude face à un conflit RP ?",
-      answers: ["RP sérieux", "Troll", "Ignorer", "Tricher"],
-      correct: 0
-    },
-    {
-      question: "30. Que signifie 'sur mes potes morts' en langage RP ?",
-      answers: ["Sincérité", "Blague", "Mensonge", "Insulte"],
-      correct: 0
-    },
-    {
-      question: "31. Quel âge minimum pour s’inscrire ?",
-      answers: ["18 ans", "15 ans", "21 ans", "16 ans"],
-      correct: 0
-    },
-    {
-      question: "32. Que veut dire 'for real' ?",
-      answers: ["Vrai", "Faux", "Jamais", "Toujours"],
-      correct: 0
-    },
-    {
-      question: "33. Quel est le prérequis micro ?",
-      answers: ["Qualité claire", "Micro basique", "Sans micro", "Micro éteint"],
-      correct: 0
-    },
-    {
-      question: "34. Quel est le prérequis d’heures de jeu ?",
-      answers: ["300 heures", "50 heures", "100 heures", "10 heures"],
-      correct: 0
-    },
-    {
-      question: "35. Que signifie 'squabble' ?",
-      answers: ["Dispute", "Course", "Combat", "Course"],
-      correct: 0
-    },
-    {
-      question: "36. Qu’est-ce qu’un 'ripoux' ?",
-      answers: ["Policier corrompu", "Civil", "Héros", "Témoin"],
-      correct: 0
-    },
-    {
-      question: "37. Qu’est-ce que la mentalité US ?",
-      answers: ["Immersion RP", "Tricher", "Ignorer", "Troll"],
-      correct: 0
-    },
-    {
-      question: "38. Que signifie 'gangshit' ?",
-      answers: ["Activités de gang", "Musique", "Course", "Cuisine"],
-      correct: 0
-    },
-    {
-      question: "39. Que doit-on faire si on rencontre un problème ?",
-      answers: ["Signaler au staff", "Ignorer", "Tricher", "Quitter"],
-      correct: 0
-    },
-    {
-      question: "40. Quel est le style de jeu attendu ?",
-      answers: ["RP sérieux", "Troll", "Cheater", "Ignorer"],
-      correct: 0
-    },
-    {
-      question: "41. Quelle est la règle d’or du serveur ?",
-      answers: ["Respect avant tout", "Tricher", "Troll", "Ignorer"],
-      correct: 0
-    }
-  ];
-
-  // Construire le formulaire
-  const form = document.getElementById('qcm-form');
-  questions.forEach((q, i) => {
-    const div = document.createElement('div');
-    div.className = 'question-block';
-    let html = `<p>${q.question}</p><div class="answers">`;
-    q.answers.forEach((ans, j) => {
-      html += `
-        <label>
-          <input type="radio" name="q${i}" value="${j}" required />
-          ${ans}
-        </label>`;
-    });
-    html += '</div>';
-    div.innerHTML = html;
-    form.appendChild(div);
-  });
-
-  // Valider le formulaire
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    let score = 0;
-    let total = questions.length;
-    for(let i=0; i<total; i++) {
-      const val = form[`q${i}`].value;
-      if(parseInt(val) === questions[i].correct) score++;
-    }
-    if(score >= Math.floor(total * 0.85)) {
-      resultMessage.style.color = '#4caf50';
-      resultMessage.textContent = `Bravo Bro ! Tu as réussi le QCM avec ${score} / ${total}. Bienvenue sur New Jack City.`;
-    } else {
-      resultMessage.style.color = '#e53935';
-      resultMessage.textContent = `Dommage, tu as obtenu ${score} / ${total}. Reprends le mental US et réessaye.`;
-    }
-  });
-</script>
 </body>
 </html>
