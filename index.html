@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Accueil YBN x New Jack City</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+  <title>YBN : New Jack City - Accueil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      background-color: #000; /* noir */
-      color: #FFC107; /* jaune */
+      background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+      color: #FFD700;
       font-family: 'Montserrat', sans-serif;
-      height: 100vh;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
@@ -24,11 +24,16 @@
       user-select: none;
       gap: 15px;
       border-bottom: 2px solid #FFC107;
+      background-color: #000;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     header img {
       height: 100px;
       width: auto;
+      filter: drop-shadow(0 0 3px #FFC107);
     }
 
     header h1 {
@@ -42,42 +47,87 @@
       gap: 10px;
     }
 
-    main {
-      flex-grow: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    header h1 span {
+      font-size: 2.4rem;
+      animation: pulse 3s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0.6; transform: scale(1.1);}
     }
 
     .discord-button {
-      background-color: #FFC107;
+      background-color: #B8860B; /* jaune foncé / or sombre */
       color: #000;
       border: none;
       padding: 1rem 2.5rem;
       font-size: 1.3rem;
       cursor: pointer;
       border-radius: 10px;
-      box-shadow: 0 0 15px #FFC107;
+      box-shadow: 0 0 15px #B8860B;
       font-weight: 700;
       text-decoration: none;
       transition: background-color 0.3s, color 0.3s;
     }
 
     .discord-button:hover {
-      background-color: #e6b800;
+      background-color: #9b6f06;
       color: #111;
-      box-shadow: 0 0 20px #e6b800;
+      box-shadow: 0 0 20px #9b6f06;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: transparent;
+    }
+
+    section.presentation {
+      max-width: 900px;
+      background-color: #111;
+      border: 2px solid #FFC107;
+      border-radius: 12px;
+      padding: 40px 30px;
+      box-shadow: 0 0 30px rgba(255, 193, 7, 0.3);
+    }
+
+    section.presentation h2 {
+      margin-top: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #FFC107;
+      margin-bottom: 25px;
+      letter-spacing: 1.2px;
+    }
+
+    section.presentation p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #FFD700;
+      text-align: justify;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://ibb.co/Xf2MNWvv" alt="Logo YBN New Jack City" />
+    <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City" />
     <h1>YBN : New Jack City <span>🗽</span></h1>
     <a href="https://discord.gg/tonliendiscord" target="_blank" class="discord-button">Rejoins notre Discord</a>
   </header>
   <main>
-    <!-- contenu futur -->
+    <section class="presentation">
+      <h2>Présentation du serveur</h2>
+      <p>
+        YBN : New Jack City est un serveur RP immersif avec une mentalité US, conçu pour offrir une expérience de jeu réaliste et captivante. Notre communauté est soudée et passionnée, avec une économie équilibrée et des scénarios riches pour vous plonger dans l’univers du RP.
+      </p>
+      <p>
+        Rejoignez-nous pour vivre des histoires uniques, des alliances stratégiques, et des rivalités intenses dans une ambiance professionnelle et respectueuse.
+      </p>
+    </section>
   </main>
 </body>
 </html>
