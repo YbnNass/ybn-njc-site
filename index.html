@@ -10,8 +10,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Urbanist', sans-serif;
-      background: url('https://i.ibb.co/F0Zsy0s/fond-us-njc.png') no-repeat center center fixed;
-      background-size: cover;
+      background-color: #0e0e0e;
       color: #5FAF9B;
     }
 
@@ -20,7 +19,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 40px;
-      background-color: rgba(14, 14, 14, 0.9);
+      background-color: #0e0e0e;
+      position: relative;
     }
 
     .logo-title {
@@ -59,34 +59,57 @@
     nav a {
       color: #5FAF9B;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
       font-size: 1rem;
-      transition: color 0.3s ease;
+      padding: 8px 14px;
+      border: 2px solid #5FAF9B;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 5px #5FAF9B33;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
     nav a:hover {
       color: #ffdd33;
+      border-color: #ffdd33;
+      box-shadow: 0 0 12px #ffdd33;
+      background-color: rgba(255, 221, 51, 0.15);
+      cursor: pointer;
     }
 
     .discord-login {
-      background-color: #7289DA;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 0.9rem;
+      background: linear-gradient(135deg, #228B22, #2E8B57);
+      color: #d0f0c0;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      box-shadow: 0 0 10px #5FAF9BAA;
+      border: 2px solid #5FAF9B;
+      transition: all 0.3s ease;
       position: absolute;
       top: 20px;
       right: 40px;
+      text-decoration: none;
+    }
+
+    .discord-login:hover {
+      background: linear-gradient(135deg, #ffdd33, #ffc107);
+      color: #1a1a1a;
+      box-shadow: 0 0 20px #ffdd33;
+      border-color: #ffdd33;
+      cursor: pointer;
+      transform: scale(1.05);
     }
 
     main {
       max-width: 900px;
       margin: 40px auto;
-      padding: 20px;
-      background-color: rgba(14, 14, 14, 0.85);
-      border-radius: 12px;
+      padding: 0 20px;
+      color: #5FAF9B;
     }
 
     main h2 {
@@ -94,6 +117,8 @@
       margin-bottom: 20px;
       font-weight: 700;
       color: #5FAF9B;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
     main p {
@@ -132,17 +157,17 @@
         <h1><span class="ybn">YBN</span> x NewJackCity 🗽</h1>
       </div>
       <nav>
-        <a href="#">Accueil</a>
-        <a href="#whitelist">Whitelist</a>
-        <a href="https://discord.gg/tonliendiscord" target="_blank">Discord</a>
+        <a href="#">Home Turf</a>
+        <a href="#whitelist">Whitelist Spot</a>
+        <a href="https://discord.gg/tonliendiscord" target="_blank" rel="noopener noreferrer">Join the Discord</a>
       </nav>
     </div>
-    <a id="loginBtn" class="discord-login" href="#">Connexion</a>
+    <a id="loginBtn" class="discord-login" href="#">Hop In</a>
   </header>
 
   <main>
     <h2>Présentation</h2>
-    <img src="https://i.ibb.co/sRTD5v6/ybn-njc-baddie.png" alt="Présentation YBN" />
+    <img src="https://i.ibb.co/hRV0h5GJ/9ca6921b-735f-4cf6-8651-55f34c9d4d63.png" alt="Présentation YBN" />
     <p>
       Bienvenue sur le site officiel de YBN : New Jack City. Serveur GTA RP inspiré de la street US, ambiance réaliste, personnages profonds et scènes sérieuses garanties.  
       Rejoins une communauté mature, avec des systèmes propres, une économie réaliste et une immersion totale dans le monde du RP.
