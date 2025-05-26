@@ -381,27 +381,90 @@ for="q42">42. Quel est le surnom emblématique de la ville de New York ? *</labe
 </form>
 
 <script>
-  document.getElementById("whitelistForm").addEventListener("submit", function(e) {
+  const bonnesReponses = {
+    q1: "RP Individualiste",
+    q2: "Utiliser des moyens irréalistes pour accomplir des actions",
+    q3: "Rester au sol et simuler la douleur de manière réaliste",
+    q4: "Jouer avec une logique de peur face aux dangers",
+    q5: "Accepter la mort définitive du personnage",
+    q6: "Provoquer intentionnellement les forces de l'ordre",
+    q7: "Ignorer l'attaque et la signaler aux admins",
+    q8: "Jouer des scènes sans conflits directs",
+    q9: "Emote RP",
+    q10: "Agir de façon prudente en cas de menace de vie",
+    q11: "Officer",
+    q12: "Effacer ou annuler une scène",
+    q13: "D'utiliser des informations HRP",
+    q14: "Mort définitive d’un personnage",
+    q15: "Les interactions doivent paraître naturelles et réalistes",
+    q16: "Parler en dehors du personnage",
+    q17: "Informé le staff",
+    q18: "Quitter une scène en pleine action pour éviter des conséquences",
+    q19: "Lui rappeler gentiment de rester en RP",
+    q20: "L'histoire personnelle de ton personnage",
+    q21: "Un manque de respect des règles ou des comportements irréalistes",
+    q22: "Un style de RP où on simule les blessures et leurs conséquences",
+    q23: "Engager un dialogue réaliste avec les policiers",
+    q24: "Une mort définitive et irrévocable de ton personnage",
+    q25: "Suivre le \"Fear RP\" en obéissant aux ordres",
+    q26: "Une pratique de RP autorisée mais souvent encadrée par des règles strictes",
+    q27: "Faire des actions exagérées et hors contexte pour perturber le RP",
+    q28: "Le bagel",
+    q29: "Assister les joueurs et faire respecter les règles de RP",
+    q30: "Ne pas en tenir compte en RP, car ton personnage ne le sait pas",
+    q31: "Jouer ton fear",
+    q32: "Protéger les civils et respecter les procédures légales RP",
+    q33: "Le défendre de manière RP en respectant l’immersion",
+    q34: "Non, sauf si sa propre vie est en danger",
+    q35: "Il oublie les événements menant à sa mort, mais reste jouable",
+    q36: "Une pause dans les hostilités décidée et respectée en RP",
+    q37: "Jouer la scène sans contester HRP et respecter les règles",
+    q38: "Non, cela va à l’encontre de l’immersion et de la mentalité US",
+    q39: "Via des scènes RP approfondies incluant des tests de loyauté",
+    q40: "Jouer la scène puis signaler au staff après coup",
+    q41: "Non, il doit s’attendre à des représailles ou à une enquête policière",
+    q42: "La Grosse Pomme"
+  };
+
+  const seuilReussite = 35;
+
+  document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
-    const formData = new FormData(this);
-    let message = "**📋 Nouvelle demande de whitelist :**\\n\\n";
-    for (const [key, value] of formData.entries()) {
-      message += `**${key}** : ${value}\\n`;
+    let score = 0;
+
+    for (let key in bonnesReponses) {
+      const el = document.querySelector(`[name="${key}"]`);
+      if (el && el.value === bonnesReponses[key]) {
+        score++;
+      }
     }
-    fetch("https://discord.com/api/webhooks/1375278642439000176/l_kDa_Hy2Z-fn9KSrFwqs-4MZlkSbEO0dqWqRLIqiPPQllhKzXs7YewTxx5Q5xSSgKU1", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ content: message })
-    }).then(() => {
-      alert("✅ Demande envoyée au staff !");
-      this.reset();
-    }).catch(() => {
-      alert("❌ Une erreur s'est produite lors de l'envoi.");
-    });
+
+    const pseudo = document.getElementById("discordName").value;
+    const rpName = document.getElementById("rpName").value;
+
+    if (score >= seuilReussite) {
+      alert(`✅ Bien joué ${pseudo} ! Tu as réussi le QCM avec ${score}/42 bonnes réponses.`);
+      sendToDiscord(pseudo, rpName, score);
+    } else {
+      alert(`❌ Tu as obtenu ${score}/42. Le minimum pour valider est ${seuilReussite}. Réessaie !`);
+    }
   });
+
+  function sendToDiscord(pseudo, rpName, score) {
+    const content = `📥 **Whitelist Validée !**\n👤 **Discord :** ${pseudo}\n🎭 **Nom RP :** ${rpName}\n✅ **Score : ${score}/42**`;
+
+    fetch("https://discord.com/api/webhooks/TON_WEBHOOK_ICI", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content })
+    }).then(() => {
+      console.log("✅ Envoyé à Discord.");
+    }).catch(() => {
+      console.error("❌ Échec de l'envoi Discord.");
+    });
+  }
 </script>
+
 
     }
   </style>
