@@ -450,19 +450,18 @@ for="q42">42. Quel est le surnom emblématique de la ville de New York ? *</labe
     }
   });
 
-  function sendToDiscord(pseudo, rpName, score) {
-    const content = `📥 **Whitelist Validée !**\n👤 **Discord :** ${pseudo}\n🎭 **Nom RP :** ${rpName}\n✅ **Score : ${score}/42**`;
+  function sendToDiscord(pseudo, rpName, score, discordId) {
+  fetch('http://TON_IP_OU_DOMAINE:3000/whitelist', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ discordId, rpName, score })
+  }).then(() => {
+    console.log("✅ Demande envoyée au bot.");
+  }).catch(() => {
+    console.error("❌ Échec de l'envoi au bot.");
+  });
+}
 
-    fetch("https://discord.com/api/webhooks/TON_WEBHOOK_ICI", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content })
-    }).then(() => {
-      console.log("✅ Envoyé à Discord.");
-    }).catch(() => {
-      console.error("❌ Échec de l'envoi Discord.");
-    });
-  }
 </script>
 
 
